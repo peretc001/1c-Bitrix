@@ -1,5 +1,5 @@
 <?php
-define('PATH_BX24', 'https://prosto24.com/rest/624/rtgf0nnhx1zlsxgw/');
+define('PATH_BX24', '############################');
 
 function query($url, $fields)
 {
