@@ -1,0 +1,382 @@
+@import '../_libs/var'
+.products
+  &-filter
+    padding-right: 3em
+    transition: none
+
+    .hideElem
+      color: $grey
+      cursor: pointer
+      &:before
+        content: 'скрыть '
+      &.active
+        &:before
+          content: 'показать '
+
+    .showElem
+      max-height: 500px
+      opacity: 1
+      overflow: hidden
+      transition: max-height .5s ease-in-out, opacity .5s ease-in-out, padding .5s ease-in-out
+      &.active
+        padding: 0
+        opacity: 0
+        max-height: 0
+
+    .category
+      .parent
+        margin: 0
+        padding: 0
+        padding-left: 0
+        padding-bottom: 0
+        li
+          margin: 0
+          margin-bottom: .3em
+          padding: 0
+          list-style: none
+          a
+            display: inline-block
+            color: $text
+            padding: .3em .3em .3em 1.2em
+            transition: color .2s ease
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              left: 0
+              top: 50%
+              transform: translateY(-50%)
+              width: 1em
+              height: 1em
+              background-size: 1em
+              background-repeat: no-repeat
+              background-position: center
+              background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMwMEI2QzYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+
+            &:hover
+              color: $accent
+          span
+            display: inline-block
+            font-weight: bold
+            background: $blue
+            padding: .5em
+            border-radius: 4px
+
+
+      .bx-filter-block
+        margin: 0
+        padding: 0
+        padding-left: 1em
+        padding-bottom: 1em
+        li
+          margin: 0
+          margin-bottom: .3em
+          padding: 0
+          list-style: none
+          a
+            color: $text
+            transition: color .2s ease
+            &:hover
+              color: $accent
+
+
+    form.smartfilter
+      width: 100%
+      display: table
+      input
+        outline: none
+
+      .bx-filter-parameters-box
+        padding: 0
+        width: 100%
+        &:not(:first-child)
+          border-top: 1px solid #C4C4C4
+
+        &-title
+          padding: 1em 0
+          cursor: pointer
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            right: 0
+            top: 50%
+            transform: translateY(-50%) rotate(0deg)
+            display: inline-block
+            width: 16px
+            height: 16px
+            z-index: 1
+            background: rgba(194, 81, 192, 0.2)
+            border-radius: 50%
+            background-size: .6em
+            background-position: center
+            background-repeat: no-repeat
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDA5LjYgNDA5LjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQwOS42IDQwOS42OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM5Mi41MzMsMTg3LjczM0gyMjEuODY3VjE3LjA2N0MyMjEuODY3LDcuNjQxLDIxNC4yMjYsMCwyMDQuOCwwcy0xNy4wNjcsNy42NDEtMTcuMDY3LDE3LjA2N3YxNzAuNjY3SDE3LjA2NyAgICBDNy42NDEsMTg3LjczMywwLDE5NS4zNzQsMCwyMDQuOHM3LjY0MSwxNy4wNjcsMTcuMDY3LDE3LjA2N2gxNzAuNjY3djE3MC42NjdjMCw5LjQyNiw3LjY0MSwxNy4wNjcsMTcuMDY3LDE3LjA2NyAgICBzMTcuMDY3LTcuNjQxLDE3LjA2Ny0xNy4wNjdWMjIxLjg2N2gxNzAuNjY3YzkuNDI2LDAsMTcuMDY3LTcuNjQxLDE3LjA2Ny0xNy4wNjdTNDAxLjk1OSwxODcuNzMzLDM5Mi41MzMsMTg3LjczM3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0MyNTFDMCIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+            transition: transform .2s ease
+          &.up
+            &::before
+              transform: translateY(-50%) rotate(225deg)
+          &.down
+            &::before
+              transform: translateY(-50%) rotate(0deg)
+
+        &-hint
+          font-weight: bold
+          font-size: 1.2em
+          margin-bottom: .5em
+
+
+      .bx-filter-block
+        display: none
+        transition: padding .3s ease
+        padding-bottom: 1em
+
+      .form-input
+        width: 100%
+        background: transparent
+        border-radius: 4px
+        border: 1px solid $accent
+        color: $text
+        font-weight: normal
+        padding: 8px 10px
+        margin-bottom: 1em
+
+      .checkbox
+        opacity: 1
+        margin-bottom: .3em
+        input
+          display: none
+        label
+          padding-left: 1.5em
+          position: relative
+          user-select: none
+          cursor: pointer
+          &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 1em
+            height: 1em
+            border: 1px solid $accent
+            border-radius: 2px
+            transition: background .3s ease
+        input:checked + label:before
+          background: $accent
+
+
+      .bx-filter-parameters-box-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+      .bx-filter-parameters-box-container-block
+        flex: 0 0 35%
+
+        input
+          width: 100%
+          background: transparent
+          border-radius: 4px
+          border: 1px solid $accent
+          color: $text
+          font-weight: bold
+          padding: 5px 10px
+        &.bx-right
+          input
+            text-align: right
+
+      .divider
+        flex: 1 1 auto
+        display: inline-block
+        height: 1px
+        margin: 0 1em
+        border-bottom: 1px solid $accent
+
+
+      .bx-filter-parameters-slider-container
+        padding: 2em 0.6em 1em
+        position: relative
+        .ui-widget.ui-widget-content
+          border: none
+          border-radius: 4px
+          background: rgba(194, 81, 192, 0.2)
+          font-family: inherit
+          height: 3px
+          user-select: none
+        .ui-widget-header
+          background: $accent
+        .ui-slider-handle.ui-corner-all.ui-state-default
+          outline: none
+          box-shadow: none
+          border: none
+          background: $accent
+          border-radius: 50%
+          cursor: grab
+        .ui-slider-horizontal .ui-slider-handle
+          top: -.5em
+          margin: 0 -.6em
+          z-index: 1
+
+      .bx-filter-parameters-box
+        &.bx-active
+          .bx-filter-parameters-box-title
+            &::before
+              transform: translateY(-50%) rotate(225deg)
+          .bx-filter-block
+            display: block
+
+      .btn
+        display: block
+        width: 100%
+        font-size: 1em
+        font-weight: normal
+        padding: 1em
+        font-weight: bold
+      #set_filter
+        margin-top: 1em
+        margin-bottom: 1em
+        pointer-events: all
+        &.hasResult
+          position: sticky
+          bottom: 1em
+          z-index: 1
+          transition: background .2s ease, color .2s ease, border .2s ease
+          &.is-empty
+            pointer-events: none
+            background: #dedede
+            border: #dedede
+            color: $text
+
+      .bx-filter-popup-result
+        font-size: .9em
+        position: absolute
+        z-index: 2
+        display: none
+        line-height: normal
+        padding: 5px 10px
+        color: #ffffff
+        white-space: nowrap
+        background: $accent
+        border: none
+        border-radius: 4px
+        &.right
+          left: 90%
+        &::after
+          content: ''
+          position: absolute
+          left: -15px
+          top: 50%
+          transform: translateY(-50%)
+          border: 8px solid transparent
+          border-right: 10px solid $accent
+        a
+          color: #fff
+          font-weight: bold
+          transition: opacity .3s ease
+          pointer-events: all
+          &:hover
+            text-decoration: none
+        &.is-empty
+          a
+            pointer-events: none
+            opacity: 0
+
+
+      .bx-filter-popup-result-close
+        display: none
+
+@media screen and (max-width: 1199.98px)
+  .products
+    &-filter
+      form.smartfilter
+        .bx-filter-parameters-box-container-block
+          flex: 0 0 45%
+        .divider
+          margin: 0
+
+@media screen and (max-width: 767.98px)
+  .products
+    &-filter
+      display: none
+      padding-right: 0
+      position: absolute
+      left: 1em
+      right: 1em
+      top: 60px
+      transform: translateY(5%)
+      opacity: 0
+      z-index: -1
+      background: #fff
+      border-radius: 4px
+      border: 2px solid $accent
+      padding: 2em
+      width: auto
+      pointer-events: none
+      &.fade
+        display: block
+        z-index: 2
+        transition: transform .1s ease, opacity .3s ease
+      &.active
+        opacity: 1
+        z-index: 2
+        pointer-events: all
+        transform: translateY(0%)
+      form.smartfilter
+        .bx-filter-parameters-box-container-block
+          flex: 0 0 35%
+        .divider
+          margin: 0 1em
+        .bx-filter-parameters-slider-container
+          .ui-slider-handle.ui-corner-all.ui-state-default
+            width: 1.6em
+            height: 1.6em
+          .ui-slider-horizontal .ui-slider-handle
+            top: -.8em
+            margin: 0 -.8em
+
+        .bx-filter-popup-result
+          display: none !important
+
+@media screen and ( max-width: 576.98px )
+  .products
+    &-filter
+      padding: 2em 1em
+      form.smartfilter
+        .bx-filter-parameters-box-container-block
+          width: auto
+
+
+        .divider
+          display: inline-block
+          width: 2em
+          height: 1px
+          border-bottom: 1px solid $accent
+
+
+
+@media screen and ( max-width: 399px )
+  .products
+    &-filter
+      form.smartfilter
+        .smart-filter-block-button
+          .form-group
+            .btn
+              font-size: 1.1em !important
+              padding: 1em !important
+              flex: 0 0 100%
+              &:first-child
+                margin-right: 0
+                margin-bottom: 0.5em
+              &:last-child
+                margin-left: 0
+
+@media screen and ( max-width: 374.98px )
+  .products
+    &-filter
+      top: 50px
+      padding: 2em 1em
+      form.smartfilter
+        .wrapp_change_inputs
+          .bx_filter_parameters_box_container_block
+            width: 120px

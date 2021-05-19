@@ -1,0 +1,625 @@
+@import '../_libs/var'
+
+.account
+    h1
+        flex: 0 0 100%
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
+    .row
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        flex-wrap: wrap
+        .left
+            flex: 0 0 15%
+            padding: 0 15px
+        .right
+            padding: 0 15px
+            flex: 0 0 85%
+        .right.offset
+            margin-left: 15%
+    input
+        outline: none
+        font-size: 16px
+        &::-webkit-input-placeholder
+            color: $grey
+            font-size: 0.9em
+        &:-moz-placeholder
+            color: $grey
+            font-size: 0.9em
+        &::-moz-placeholder
+            color: $grey
+            font-size: 0.9em
+        &:-ms-input-placeholder
+            color: $grey
+            font-size: 0.9em
+    ul
+        margin: 0
+        padding: 0
+        li
+            list-style: none
+            padding: 0
+            margin: 0
+            margin-bottom: 1em
+            a
+                font-size: 1.4em
+                color: $grey
+                &.active
+                    font-weight: bold
+                    color: $accent
+
+
+    &-menu
+        display: flex
+        margin: 0 1rem !important
+        li
+            margin-right: 1rem !important
+            background-color: white !important
+            border-radius: 20px
+            padding: 0.625rem 1.250rem !important
+            a
+                font-size: 1em !important
+                color: $accent !important
+        li.active
+            background-color: $accent !important
+            a
+                color: white !important
+
+
+    //PRIVATE ACCOUNT
+
+    &-data
+        background: #ffffff
+        padding: 2em
+        margin: 0
+        margin-bottom: 2em
+        border-radius: 20px
+        h2
+            font-weight: bold
+            font-size: 1.8em
+            margin: 0
+            margin-bottom: 1em
+            padding: 0
+            line-height: 1
+
+        .form-row
+            position: relative
+            overflow: hidden
+            padding: 0
+            margin-bottom: 1em
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-direction: column
+            label
+                color: $grey
+                font-size: 0.9em
+                font-weight: bold
+                padding: 0
+                margin: 0
+                margin-bottom: 0.5em
+                line-height: 1
+                span
+                    opacity: 1
+                    z-index: 1
+                    position: relative
+                    left: auto
+                    right: auto
+                    bottom: auto
+                    width: auto
+                    padding: 0
+                    background: transparent
+                    border-radius: 0
+                    color: $accent
+                    font-size: 1em
+                    text-align: center
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    transition: opacity .3s ease
+            input
+                background: transparent
+                border: 2px solid $accent
+                border-radius: 4px
+                width: 100%
+                font-weight: bold
+                padding: .8em
+                transition: padding .3s ease
+                &:required:focus:invalid,
+                &:focus:invalid
+                    padding: 0.6em .8em 1em .8em
+                &:required:focus:invalid,
+                &:focus:invalid
+                    & + span
+                        opacity: 1
+                        z-index: 1
+                &:focus:valid
+                    & + span
+                        opacity: 0
+                        z-index: -1
+                &:valid
+                    & + span
+                        opacity: 0
+                        z-index: -1
+            span
+                opacity: 0
+                z-index: -1
+                position: absolute
+                left: 0
+                right: 0
+                bottom: 0
+                width: auto
+                padding: .3em
+                background: $accent
+                border-radius: 0 0 4px 4px
+                color: #ffffff
+                font-size: 0.7em
+                text-align: center
+                white-space: nowrap
+                overflow: hidden
+                text-overflow: ellipsis
+                transition: opacity .3s ease
+
+        &-private
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            padding-bottom: 1.5em
+            .form-row
+                flex: 0 0 32%
+                &:not(:first-child)
+                    margin-left: 2%
+                &:nth-child(4)
+                    margin-left: 0
+                &:nth-child(7)
+                    margin-left: 0
+            .form-group
+                padding: 0 15px
+                margin-left: 2%
+                .col-form-label
+                    float: none
+                    color: $grey
+                    font-size: 0.9em
+                    font-weight: bold
+                    padding: 0
+                    margin: 0 0 0.5em
+                    line-height: 1
+
+                .form-check-label
+                    float: none
+                    color: $grey
+                    font-size: 0.9em
+                    font-weight: bold
+                    padding: 0
+                    margin: 0 0 0.5em
+                    line-height: 1
+                    display: flex
+                    cursor: pointer
+                    &:before
+                        content: ""
+                        display: inline-block
+                        width: 30px
+                        height: 30px
+                        border: 2px solid $accent
+                        border-radius: 4px
+                        margin-right: 7px
+                        cursor: pointer
+
+                .form-check-input
+                    display: none
+            .form-check-inline
+                margin-right: 2em
+                & input:checked ~ .form-check-label:before
+                    background-color: $accent
+
+        &-delivery
+            display: flex
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            padding-bottom: 1em
+            .form-row
+                flex: 0 0 32%
+                &:not(:first-child)
+                    margin-left: 2%
+                &:nth-child(3),
+                &:nth-child(4)
+                    flex: 0 0 15%
+
+            .adress
+                display: none
+                flex-wrap: wrap
+                .new-adress
+                    flex: 0 0 100%
+                    .add
+                        display: inline-block
+                        font-weight: bold
+                        cursor: pointer
+                        user-select: none
+                        margin-bottom: 1em
+                        border-bottom: 1px dashed $text
+                        transition: max-height 1s ease, opacity 1s ease
+                        &.hidden,
+                        &.invisible
+                            opacity: 0
+                            max-height: 0
+                            overflow: hidden
+                            pointer-events: none
+                            border-bottom: none
+                &.addAdress
+                    display: flex
+                &.fade
+                    display: flex
+                    opacity: 0
+                    max-height: 0
+                    overflow: hidden
+                    pointer-events: none
+                    transition: max-height 1s ease, opacity 1s ease
+                    &.open
+                        opacity: 1
+                        max-height: 500px
+                        overflow: visible
+                        pointer-events: all
+
+        .btn
+            &.btn-accent,
+            &.btn-outline-accent
+                font-size: 1.2em
+                font-weight: bold
+                padding: 1em
+                width: 32%
+            &:disabled
+                background: #f5f5f5
+                border-color: darken(#f5f5f5, 5%)
+                color: lighten($text, 30%)
+                cursor: default
+                &:hover
+                    background: #f5f5f5
+                    border-color: darken(#f5f5f5, 5%)
+                    color: lighten($text, 30%)
+        &__text
+            font-size: 1.143em
+            color: $text
+            margin-bottom: 2rem
+
+        &__add-card
+            width: 100%
+            max-width: 296px
+            height: 100%
+            max-height: 179px
+            border-radius: 20px
+            background-color: $accent
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 1.450rem
+            font-size: 1.714rem
+            color: white
+            font-weight: bold
+            border: 0
+            img
+                margin-bottom: 1rem
+                max-width: 67px
+        &__address
+            &-item
+                &-favorite
+                    background-image: url("/local/templates/.default/img/personal/favorite.svg")
+                    width: 12px
+                    height: 12px
+                    display: inline-block
+                    cursor: pointer
+                    margin-right: 10px
+                &-delete
+                    cursor: pointer
+                    margin-left: 10px
+
+                &.active
+                    color: #00B6C5
+                    .account-data__address-item-favorite
+                        background-image: url("/local/templates/.default/img/personal/favorite-print.svg")
+
+
+    &-data-info
+        display: flex
+        &__img
+            margin-right: 2em
+            flex: 0 0 13.85%
+
+    &-card
+        width: 100%
+
+    &-delivery-addresses
+        margin-right: 2em
+        width: 100%
+        .btn
+            width: auto !important
+        #map
+            display: none
+        .max-map
+            display: block
+    &-pickup-points
+        width: 100%
+        .btn
+            width: auto !important
+    &-profile
+        margin: 0 !important
+    &-address-wrap
+        display: flex
+        width: 100%
+
+
+
+    //MY ORDERS
+    &-orders
+        background: #ffffff
+        padding: 0
+        margin: 0
+        margin-bottom: 2em
+        border-radius: 20px
+        &--header
+            background: $blue
+            padding: 1.5em 3em
+            display: flex
+            align-items: flex-start
+            justify-content: space-between
+            border-radius: 20px 20px 0 0
+            &--right
+                text-align: right
+            h3
+                font-size: 1.5em
+                font-weight: bold
+                margin-bottom: .5rem
+            p
+                margin: 0
+            .status
+                color: $red
+                &.done
+                    color: $green
+        &--body
+            display: flex
+            align-items: center
+            padding: 1.5em 3em
+            &--left
+                flex: 0 0 45%
+            &--right
+                flex: 1 1 auto
+                text-align: right
+                a
+                    display: inline-block
+                    padding: .5em
+            .group
+                display: flex
+                align-items: center
+                &:not(:last-child)
+                    margin-bottom: 2em
+                p
+                    margin: 0
+                    &:first-child
+                        width: 180px
+                        margin-right: 3rem
+
+                .name
+                    font-weight: bold
+                    font-size: 1.5em
+                .status
+                    font-weight: bold
+                    font-size: .9em
+                .delivery
+                    color: $blue2
+                    font-weight: bold
+
+
+
+//FAVORITE
+.no-favorite
+    display: block
+    text-align: center
+    padding: 20px 0
+    line-height: 2
+    a
+        font-weight: bold
+        color: $accent
+        &:hover
+            color: $accent
+
+
+@media screen and ( max-width: 1199.98px )
+    .account
+        .row
+            .left
+                flex: 0 0 17%
+            .right
+                flex: 0 0 83%
+            .right.offset
+                margin-left: 17%
+        &-orders
+            &--body
+                &--left
+                    flex: 0 0 50%
+                .group
+                    p
+                        &:first-child
+                            margin-right: 2rem
+
+@media screen and ( max-width: 991.98px )
+    .account
+        .row
+            .left
+                flex: 0 0 100%
+            .right
+                flex: 0 0 100%
+            .right.offset
+                margin-left: 0
+        h1
+            margin-bottom: 0.5em
+        ul
+            margin: 2em 0
+            display: flex
+            li
+                padding-left: 2em
+                a
+                    font-size: 1.6em
+
+        &-data-info
+            flex-direction: column
+            &__img
+                margin-bottom: 2em
+        &-address-wrap
+            flex-wrap: wrap
+        &-delivery-addresses
+            margin-right: 0 !important
+        &-data__add-card
+            max-width: 250px
+            img
+                margin-bottom: 1.357rem
+                max-width: 50px
+
+        &-orders
+            &--body
+                flex-wrap: wrap
+                &--left
+                    flex: 0 0 100%
+                    margin-bottom: 1em
+                    .group
+                        justify-content: space-between
+                        p
+                            &:first-child
+                                margin-right: auto
+                &--right
+                    text-align: left
+
+
+@media screen and ( max-width: 767.98px )
+    .account
+        h1, h2, h3, h4
+            font-size: 1.8em
+        ul
+            li
+                a
+                    font-size: 1.4em
+        &-data
+            h2
+                font-size: 1.4em
+            &-private
+                .form-row
+                    flex: 0 0 49%
+                    &:nth-child(2n+1)
+                        margin-left: 0
+                    &:nth-child(4)
+                        margin-left: 2%
+            &-delivery
+                .form-row
+                    flex: 0 0 49%
+                    &:nth-child(2n+1)
+                        margin-left: 0
+                    &:nth-child(3),
+                    &:nth-child(4)
+                        flex: 0 0 49%
+                .adress
+                    .new-adress
+                        padding-top: 1em
+
+            .btn
+                &.btn-accent
+                    width: 49%
+
+
+        &-orders
+            &--header
+                padding: 1.5em 2em
+                h3
+                    font-size: 1.1em !important
+                p
+                    font-size: 1em
+
+            &--body
+                padding: 1.5em 2em
+                &--left
+                    .group
+                        .name
+                            font-size: 1.1em
+
+
+@media screen and ( max-width: 576.98px )
+    .account
+        h1, h2, h3, h4
+            font-size: 1.6em
+
+        ul
+            margin-bottom: 0.5em
+            li
+                padding-left: 0
+                padding-right: 1em
+                a
+                    font-size: 1.1em
+        &-menu
+            li
+                padding: 7px 10px !important
+                margin-right: 7px !important
+                a
+                    font-size: 12px !important
+            li.active
+                padding: 7px 7px !important
+                a
+                    font-size: 12px !important
+                    font-weight: bold
+
+        &-data
+            padding: 2em 1em
+            h2
+                font-size: 1.8em
+
+            &-private
+                .form-row
+                    flex: 0 0 100%
+                    margin-left: 0 !important
+            &-delivery
+                .form-row
+                    flex: 0 0 100%
+                    &:nth-child(1),
+                    &:nth-child(2)
+                        margin-left: 0
+                    &:nth-child(3),
+                    &:nth-child(4)
+                        flex: 0 0 48%
+                    &:nth-child(3)
+                        padding-right: 0
+                        margin-right: 2%
+                    &:nth-child(4)
+                        margin-left: 2%
+                        padding-right: 0
+
+        &-orders
+            &--body
+                &--left
+                    .group
+                        flex-wrap: wrap
+                        p:first-child
+                            margin-bottom: .5em
+                    .delivery
+                        flex: 0 0 100%
+
+@media screen and ( max-width: 374.98px )
+    .account
+        font-size: 12px
+        h1, h2, h3, h4
+            font-size: 1.4em
+
+        ul
+            li
+                padding-right: 0.5em
+                a
+                    font-size: 1em
+
+        &-bonus
+            &-table
+                &__left,
+                &__right
+                    table
+                        tr
+                            td
+                                padding-left: 1em !important
+

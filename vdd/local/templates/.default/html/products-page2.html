@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Карточка товара</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
+  </style>
+
+<!-- Products card css -->
+  <link rel="stylesheet" href="./css/products-page/products-page.min.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
+        </div>
+      </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">(9:00 - 22:00)</span>
+        <div class="has-children">
+          <a class="nav-top__right__user">Покупателям</a>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+        </div>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+        <a class="nav-top__right__lk" href="/">Гость</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand"></a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist">
+          <!-- <span>2</span> -->
+        </a>
+        <a href="" class="nav-search--right__cart">
+          <!-- <span class="qty">3</span> -->
+          <!-- <span class="price">115 750 ₽</span> -->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-mobile">
+    <input type="text" name="search" placeholder="Поиск">
+    <button class="search">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEzLjI4IDUxMy4yOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEzLjI4IDUxMy4yODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiBjbGFzcz0iIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00OTUuMDQsNDA0LjQ4TDQxMC41NiwzMjBjMTUuMzYtMzAuNzIsMjUuNi02Ni41NiwyNS42LTEwMi40QzQzNi4xNiw5Ny4yOCwzMzguODgsMCwyMTguNTYsMFMwLjk2LDk3LjI4LDAuOTYsMjE3LjYgICAgczk3LjI4LDIxNy42LDIxNy42LDIxNy42YzM1Ljg0LDAsNzEuNjgtMTAuMjQsMTAyLjQtMjUuNmw4NC40OCw4NC40OGMyNS42LDI1LjYsNjQsMjUuNiw4OS42LDAgICAgQzUxOC4wOCw0NjguNDgsNTE4LjA4LDQzMC4wOCw0OTUuMDQsNDA0LjQ4eiBNMjE4LjU2LDM4NGMtOTIuMTYsMC0xNjYuNC03NC4yNC0xNjYuNC0xNjYuNFMxMjYuNCw1MS4yLDIxOC41Niw1MS4yICAgIHMxNjYuNCw3NC4yNCwxNjYuNCwxNjYuNFMzMTAuNzIsMzg0LDIxOC41NiwzODR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNDMjUxQzAiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==" /> Поиск</button>    
+    <div class="catalog-btn">
+      <div class="icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      Каталог товаров
+    </div>
+  </div>
+
+  <div class="nav-catalog">
+    
+      <ul class="nav-catalog__menu">
+        <li>
+          <a href="" class="catalog hover-link" data-menu="catalog">
+            <div class="icon">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+              Каталог товаров
+          </a>
+        </li>
+        <li>
+          <a href="./category-3.html" class="hover-link parrent" data-menu="sale">Товары по акциям </a>
+        </li>
+        <li>
+          <a href="./category-3.html" class="hover-link parrent" data-menu="boy">Для мальчиков </a>
+        </li>
+        <li>
+          <a href="./category-3.html" class="hover-link parrent" data-menu="girl">Для девочек </a>
+        </li>
+        <li>
+          <a href="./category-3.html" class="link">Герои и интересы </a>
+        </li>
+        <li>
+          <a href="./category-3.html" class="link">Популярные бренды </a>
+        </li>
+
+        <li class="catalog">
+          <a href="./catalog.html" data-id="1" class="children">
+            <img src="/img/cat1.aa57e21b.svg" alt=""> Одежда и обувь
+          </a>
+          </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="2" class="children">
+            <img src="/img/cat2.f79b199d.svg" alt=""> Игрушки и игры
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="3" class="children">
+            <img src="/img/cat3.49b004ab.svg" alt=""> Детская комната
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="4" class="children">
+            <img src="/img/cat4.d93b4a18.svg" alt=""> Коляски и автокресла
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="5" class="children">
+            <img src="/img/cat5.e8164c87.svg" alt=""> Подгузники и гигиена
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="6" class="children">
+            <img src="/img/cat6.830165c6.svg" alt=""> Кормление и питание
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="7" class="children">
+            <img src="/img/cat7.0284a397.svg" alt=""> Развитие и обучение
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="8" class="children">
+            <img src="/img/cat8.c7ce9472.svg" alt=""> Для спорта и отдых
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="9" class="children">
+            <img src="/img/cat9.8adf09dd.svg" alt=""> Хобби и творчество
+          </a>
+        </li>
+        <li class="catalog">
+          <a href="./catalog.html" data-id="10" class="children">
+            <img src="/img/cat10.64be6711.svg" alt=""> Товары для мам
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-catalog__submenu" data-submenu="catalog">
+        <div class="nav-catalog__general">
+          <ul>
+            <li>
+              <a href="./catalog.html" data-id="1" class="hext-link active">
+                <img src="/img/cat1.aa57e21b.svg" alt=""> Одежда и обувь
+              </a>
+              </li>
+            <li>
+              <a href="./catalog.html" data-id="2" class="children">
+                <img src="/img/cat2.f79b199d.svg" alt=""> Игрушки и игры
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="3" class="children">
+                <img src="/img/cat3.49b004ab.svg" alt=""> Детская комната
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="4" class="children">
+                <img src="/img/cat4.d93b4a18.svg" alt=""> Коляски и автокресла
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="5" class="children">
+                <img src="/img/cat5.e8164c87.svg" alt=""> Подгузники и гигиена
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="6" class="children">
+                <img src="/img/cat6.830165c6.svg" alt=""> Кормление и питание
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="7" class="children">
+                <img src="/img/cat7.0284a397.svg" alt=""> Развитие и обучение
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="8" class="children">
+                <img src="/img/cat8.c7ce9472.svg" alt=""> Для спорта и отдых
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="9" class="children">
+                <img src="/img/cat9.8adf09dd.svg" alt=""> Хобби и творчество
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="10" class="children">
+                <img src="/img/cat10.64be6711.svg" alt=""> Товары для мам
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="nav-catalog__parent" data-parent="1">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="2">
+          <div class="nav-catalog__parent__head"><p>Игрушки и игры</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="3">
+          <div class="nav-catalog__parent__head"><p>Детская комната</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="4">
+          <div class="nav-catalog__parent__head"><p>Коляски и автокресла</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="5">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="6">
+          <div class="nav-catalog__parent__head"><p>Игрушки и игры</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="7">
+          <div class="nav-catalog__parent__head"><p>Детская комната</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="8">
+          <div class="nav-catalog__parent__head"><p>Коляски и автокресла</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="9">
+          <div class="nav-catalog__parent__head"><p>Детская комната</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="10">
+          <div class="nav-catalog__parent__head"><p>Коляски и автокресла</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-catalog__submenu" data-submenu="sale">
+        <div class="nav-catalog__general">
+          <p class="head"></p>
+          <ul>
+            <li>
+              <a href="./catalog.html" data-id="1" class="children">
+                <img src="/img/cat1.aa57e21b.svg" alt=""> Одежда и обувь
+              </a>
+              </li>
+            <li>
+              <a href="./catalog.html" data-id="2" class="children">
+                <img src="/img/cat2.f79b199d.svg" alt=""> Игрушки и игры
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="3" class="children">
+                <img src="/img/cat3.49b004ab.svg" alt=""> Детская комната
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="nav-catalog__parent" data-parent="1">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Акция Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Акция Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Акция Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Акция Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Акция Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="2">
+          <div class="nav-catalog__parent__head"><p>Игрушки и игры</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="3">
+          <div class="nav-catalog__parent__head"><p>Детская комната</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-catalog__submenu" data-submenu="boy">
+        <div class="nav-catalog__general">
+          <p class="head"></p>
+          <ul>
+            <li>
+              <a href="./catalog.html" data-id="1" class="children">
+                <img src="/img/cat4.d93b4a18.svg" alt=""> Коляски и автокресла
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="2" class="children">
+                <img src="/img/cat5.e8164c87.svg" alt=""> Подгузники и гигиена
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="3" class="children">
+                <img src="/img/cat6.830165c6.svg" alt=""> Кормление и питание
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="nav-catalog__parent" data-parent="1">
+          <div class="nav-catalog__parent__head"><p>Коляски и автокресла</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="2">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="3">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nav-catalog__submenu" data-submenu="girl">
+        <div class="nav-catalog__general">
+          <p class="head"></p>
+          <ul>
+            <li>
+              <a href="./catalog.html" data-id="1" class="children">
+                <img src="/img/cat4.d93b4a18.svg" alt=""> Коляски и автокресла
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="2" class="children">
+                <img src="/img/cat5.e8164c87.svg" alt=""> Подгузники и гигиена
+              </a>
+            </li>
+            <li>
+              <a href="./catalog.html" data-id="3" class="children">
+                <img src="/img/cat6.830165c6.svg" alt=""> Кормление и питание
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="nav-catalog__parent" data-parent="1">
+          <div class="nav-catalog__parent__head"><p>Коляски и автокресла</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="2">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+        <div class="nav-catalog__parent" data-parent="3">
+          <div class="nav-catalog__parent__head"><p>Одежда и обувь</p></div>
+          <ul>
+            <li><a href="">Одежда1</a></li>
+            <li><a href="./category.html"> Верхняя одежда для мальчиков </a></li>
+            <li><a href="./category.html"> Верхняя одежда для девочек </a></li>
+            <li><a href="./category.html"> Верхняя одежда для малышей </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для девочек</a></li>
+            <li><a href="./category.html"> Блузки </a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Жилеты </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для мальчиков</a></li>
+            <li><a href="./category.html"> Брюки </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Рубашки </a></li>
+            <li><a href="./category.html"> Толстовки </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для девочек</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Обувь для мальчиков</a></li>
+            <li><a href="./category.html"> Анатомическая обувь </a></li>
+            <li><a href="./category.html"> Ботинки </a></li>
+            <li><a href="./category.html"> Домашняя обувь </a></li>
+            <li><a href="./category.html"> Кроссовки </a></li>
+            <li><a href="./category.html"> Резиновые сапоги </a></li>
+          </ul>
+          <ul>
+            <li><a href="">Одежда для малышей</a></li>
+            <li><a href="./category.html"> Боди </a></li>
+            <li><a href="./category.html"> Джемперы </a></li>
+            <li><a href="./category.html"> Джинсы </a></li>
+            <li><a href="./category.html"> Кардиганы </a></li>
+            <li><a href="./category.html"> Комбинезоны </a></li>
+            <li><a href="./category123.html" class="more"> показать еще </a></li>
+          </ul>
+        </div>
+      </div>
+
+  </div>
+</nav>
+  
+<main>
+  <div class="breadcrumb">
+      <div class="container">
+        <div class="links">
+          <a href="./">Главная</a>
+          <a href="./category.html">Одежда и обувь</a>
+          <a href="./subcategory.html">Одежда для девочек</a>
+          <a href="./category-3.html">Одежда для девочек</a>
+        </div>
+        <span>Толстовка Blue Seven розовая</span>
+      </div>
+  </div>
+
+  <section class="products-page">
+      <div class="container">
+        
+        <h1>Толстовка Blue Seven розовая</h1>
+
+        <div class="products-page-header">
+            <span>Артикул: <b>258697</b></span>
+            <div class="products-page-header__review">
+                <div class="star">
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span></span>
+                </div>
+                <span class="quote">18</span>
+            </div>
+        </div>
+        
+        <div class="products-page-body">
+          <div class="products-page-body__item">
+            <div class="close"></div>
+            <div class="products-page-body__item__left">
+              <ul class="products-page-body__item__left__thumb">
+                <li><img src="./img/products/card/1.jpg" alt=""></li>
+                <li><img src="./img/products/card/2.jpg" alt=""></li>
+                <li><img src="./img/products/card/3.jpg" alt=""></li>
+                <li><img src="./img/products/card/4.jpg" alt=""></li>
+                <li><img src="./img/products/card/5.jpg" alt=""></li>
+                <li><img src="./img/products/card/6.jpg" alt=""></li>
+                <li><img src="./img/products/card/1.jpg" alt=""></li>
+                <li><img src="./img/products/card/2.jpg" alt=""></li>
+                <li><img src="./img/products/card/3.jpg" alt=""></li>
+                <li><img src="./img/products/card/4.jpg" alt=""></li>
+              </ul>
+            </div>
+
+            <div class="products-page-body__item__right">
+              <div class="products-page-body__item__right__tag">
+                <span class="top">хит</span>
+                <span class="wishlist active"></span>
+              </div>
+              <div class="products-page-body__item__right__img">
+                <ul class="products-page-body__item__right__img__wrapp">
+                  <li><img data-lazy="./img/products/card/1.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/2.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/5.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/6.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/1.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/2.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/3.jpg" alt=""></li>
+                  <li><img data-lazy="./img/products/card/4.jpg" alt=""></li>
+                </ul>
+                <span class='zoom'></span>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="products-page-body__buy">
+            <div class="products-page-body__buy--left">
+              <div class="products-page-body__buy__price">
+                <div class="products-page-body__buy__price__cost">
+                  <p class="old">9 750 ₽</p>
+                  <p>6 750 ₽</p>
+                </div>
+                <div class="products-page-body__buy__price__tag">
+                  <span>+2511 рублей экономии</span>
+                  <span>+481 бонусных рублей</span>
+                </div>
+                <div class="products-page-body__buy__price__credit">
+                  <p>
+                    <b>В кредит:</b> от 2661 руб./мес.
+                  </p>
+                  <a href="">Подробнее</a>
+                </div>
+              </div>
+              <div class="products-page-body__buy__best">
+                <div class="icon">
+                  <img src="./img/products/best.svg" alt="">
+                </div>
+                <div class="text">
+                  <p>Гарантия лучшей цены</p>
+                  <p>Цены в других магазинах</p>
+                </div>
+                <span class="hideElem active"></span>
+                <div class="showElem active">
+                  <p>Каждые 8 часов мы исследуем цены более чем в 60 интернет-магазинах и предоставляем вам самую лучшую. Такова наша политика цен!</p>
+                  <p class="date">Последующее исследование цены: 26.05.2020</p>
+                  <ul>
+                    <li>Детский мир <span>7 750 ₽</span></li>
+                    <li>Дочки-сыночки <span>8 360 ₽</span></li>
+                    <li>Малыши <span>7 990 ₽</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="products-page-body__buy--right">
+              <div class="products-page-body__buy__button">
+                  <button class="btn btn-accent buy">В корзину</button>
+                  <span class="btn btn-outline-yellow oneclick" data-toggle="modal" data-target="oneclick">В один клик</span>
+              </div>
+
+              <div class="products-page-body__buy__delivery">
+                <div class="products-page-body__buy__delivery__head">
+                  <p class="caption">Условия доставки</p>
+                  <a class="table" href="">Подробнее</a>
+                </div>
+                <p>
+                  Самовывоз —  <b>сегодня, от 99 рублей</b>
+                </p>
+                <p>
+                    Курьером — <b>2 февраля, от 199 рублей</b>
+                </p>
+               </div>
+            </div>
+          </aside>
+
+          <div class="products-page-body__about">
+              <div class="products-page-body__about__title">
+                  <div class="products-page-body__about__title__img">
+                      <img src="./img/products/card/brand.png" alt="">
+                  </div>
+                  <div class="products-page-body__about__title__brand">
+                      <p>Бренд: <b>Mobicaro</b></p>
+                      <p>Качественный, тросик для груза интересно вертеть, кнопки со звуком и подсветка интересные, плюс резиновые колёса и инерционный механизм, ребёнку понравилось играть.</p>
+                  </div>
+              </div>
+              <div class="products-page-body__about__text">
+                  <div class="caption">
+                      <h3>
+                          О товаре
+                      </h3>
+                  </div>
+                  <p>
+                      Практичная и теплая, выполнена с применением технологии AWS EXTREME из водонепроницаемой и воздухопроницаемой мембранной ткани: 10000мм/5000г/м2 /24 ч. Эффективно защищает от ветра и осадков. Используется 300 гр технологичного, инновационного утеплителя DOWN IMITATION. Комбинированная разнофактурная наружная ткань. Регулируемый, отстегивающийся капюшон. Регулируемые манжеты. Внутренний трикотажный манжет, Снегозащитная юбка с противоскользящей тесьмой, Карман под skipass, Карманы с флисовой подкладкой, Теплая и мягкая внутренняя вставка на воротнике, Два боковых кармана на молниях, Длина изделия по спинке 60 см (на размер 140), езон: зима, обращаем  ваше внимание, что правильное определение размера детской обуви.
+                  </p>
+                  <span class="hideElem active">характеристики</span>
+                  <div class="showElem active">
+                  <table>
+                      <tbody>
+                          <tr>
+                              <td>
+                                  Страна-производитель   
+                              </td>
+                              <td>
+                                  Китай
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Материал
+                              </td>
+                              <td>
+                                  Состав товара: 100% Полиэстер
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Габариты упаковки
+                              </td>
+                              <td>
+                                  30см x 5см x 30см
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Вес упаковки
+                              </td>
+                              <td>
+                                  0,5 кг
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Сезон
+                              </td>
+                              <td>
+                                  Зима
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Длина изделия по спинке
+                              </td>
+                              <td>
+                                  60 см
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Размер
+                              </td>
+                              <td>
+                                  140
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
+              </div>
+          </div>
+
+          <div class="products-page-body__rq">
+            <div class="products-page-body__rq__head tabs">
+              <h3 class="active">Отзывы</h3>
+              <h3>Вопросы и ответы</h3>
+            </div>
+            
+            <div id="review" class="tabs-item active">
+              <button class="btn btn-accent" data-toggle="modal" data-target="review">Оставить отзыв</button>
+              
+              <div class="products-page-body__rq-review__card">
+                <div class="products-page-body__rq-review__card__name">
+                  <p>
+                    Александра
+                  </p>
+                  <div class="products-page-header__review">
+                      <div class="star">
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span></span>
+                      </div>
+                  </div>
+                </div>
+                <div class="products-page-body__rq-review__card__text">
+                  <p class="caption">Достоинства</p>
+                  <p>Куртка для мальчика LINTON JR от Icepeak отличный выбор как для повседневного использования, так и для катания на лыжах или сноубо</p>
+                  <p class="caption">Недостатки</p>
+                  <p>Куртка для мальчика LINTON JR от Icepeak отличный выбор как для повседневного использования, так и для катания на лыжах или сноуборде.</p>
+                  <p class="caption">Комментарий</p>
+                  <p>Нашей дочке подарили этот конструктор на годик. Он заинтересовал её с первой минуты) собирала детали, катала вагончики, и не переставая нажимала на музыкальную трубу поезда))) сейчас ей 2,5 играет до сих пор. В дальнейшем покупали ей ещё наборы, чтобы деталей было больше. Сегодня купили по акции нашему племяннику, которому скоро годик)уверена, что ему тоже понравится!</p>
+                </div>
+                <p class="date">сегодня, 12.10.2020</p>
+              </div>
+              <div class="products-page-body__rq-review__card">
+                <div class="products-page-body__rq-review__card__name">
+                  <p>
+                    Татьяна
+                  </p>
+                  <div class="products-page-header__review">
+                      <div class="star">
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                  </div>
+                </div>
+                <div class="products-page-body__rq-review__card__text">
+                  <p class="caption">Достоинства</p>
+                  <p>Куртка для мальчика LINTON JR от Icepeak отличный выбор как для повседневного использования, так и для катания на лыжах или сноуборде.</p>
+                  <p class="caption">Недостатки</p>
+                  <p>Куртка для мальчика LINTON JR от Icepeak отличный выбор как для повседневного использования, так и для катания на лыжах или сноуборде.</p>
+                  <p class="caption">Комментарий</p>
+                  <p>Он заинтересовал её с первой минуты) собирала детали, катала вагончики, и не переставая нажимала на музыкальную трубу поезда))) </p>
+                  <div class="products-page-body__rq-review__card__text__gallery">
+                    <a href="./img/products/card/1.jpg" data-fancybox="gallery"><img src="./img/review/1.png" alt=""></a>
+                    <a href="./img/products/card/2.jpg" data-fancybox="gallery"><img src="./img/review/2.png" alt=""></a>
+                    <a href="./img/products/card/3.jpg" data-fancybox="gallery"><img src="./img/review/3.png" alt=""></a>
+                    <a href="./img/products/card/4.jpg" data-fancybox="gallery"><img src="./img/review/4.png" alt=""></a>
+                  </div>
+                </div>
+                <p class="date">сегодня, 12.10.2020</p>
+              </div>
+            </div>
+
+            <div id="question" class="tabs-item" >
+              <button class="btn btn-accent" data-toggle="modal" data-target="question">Задать вопрос о товаре</button>
+              
+              <div class="products-page-body__rq-question__card">
+                <p class="name">Татьяна</p>
+                <p class="date">сегодня, 12.10.2020</p>
+                <p class="text">Подскажите, свитерок маломерит?</p>
+              </div>
+
+              <div class="products-page-body__rq-question__card answer">
+                <p class="name">Андрей</p>
+                <p class="date">сегодня, 12.10.2020</p>
+                <p class="text">Нет, идёт размер в размер</p>
+              </div>
+
+              <div class="products-page-body__rq-question__card">
+                <p class="name">Татьяна</p>
+                <p class="date">сегодня, 12.10.2020</p>
+                <p class="text">Подскажите, свитерок маломерит?</p>
+              </div>
+
+              <div class="products-page-body__rq-question__card answer">
+                <p class="name">Андрей</p>
+                <p class="date">сегодня, 12.10.2020</p>
+                <p class="text">Нет, идёт размер в размер</p>
+              </div>
+
+              <span class="hideElem active">Показать все вопросы</span>
+
+              <div class="showElem active">
+                <div class="products-page-body__rq-question__card">
+                  <p class="name">Татьяна</p>
+                  <p class="date">сегодня, 12.10.2020</p>
+                  <p class="text">Подскажите, свитерок маломерит?</p>
+                </div>
+                <div class="products-page-body__rq-question__card answer">
+                  <p class="name">Андрей</p>
+                  <p class="date">сегодня, 12.10.2020</p>
+                  <p class="text">Нет, идёт размер в размер</p>
+                </div>
+                <div class="products-page-body__rq-question__card">
+                  <p class="name">Татьяна</p>
+                  <p class="date">сегодня, 12.10.2020</p>
+                  <p class="text">Подскажите, свитерок маломерит?</p>
+                </div>
+                <div class="products-page-body__rq-question__card answer">
+                  <p class="name">Андрей</p>
+                  <p class="date">сегодня, 12.10.2020</p>
+                  <p class="text">Нет, идёт размер в размер</p>
+                </div>
+              </div>
+
+            </div>
+          
+          </div>
+        </div>          
+
+    </div>
+  </section>
+
+  <section class="resent">
+    <div class="container">
+
+      <h4>С этим товаром покупают</h4>
+
+      <div class="resent-products">
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+              <span class="new">new</span>
+              <span class="sale">-30%</span>
+              <span class="bonus">+1000Б</span>
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/1.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Боди Zara Моя Горошинка серое в полоску
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price sale">
+                <span class="old">7 200 ₽</span>
+                <span class="price">116 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist active"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page2.html" class="products-card">
+            <div class="products-card__head">
+              <span class="top">хит</span>
+              <span class="new">new</span>
+              <span class="installments">0-0-12</span>
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/2.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Сумочка LOL антистресс
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">999 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+              <span class="top">хит</span>
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/3.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Футболка Play Today жёлтая
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">+ 250Б</span>
+                <span class="price">9 999 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+              <span class="new">хит</span>
+            </div>
+            <span class="products-card__img">
+              <img data-lazy="./img/products/4.png" alt="">
+            </span>
+            <div class="products-card__title">
+              Боди Zara Моя Горошинка серое в полоску Боди Zara Моя Горошинка серое в полоску
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">+ 250Б</span>
+                <span class="price">19 999 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/5.png" alt="">
+            </div>
+            <div class="products-card__title">
+              Боди Zara Моя Горошинка серое в полоску
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">6 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist active"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/6.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Сумочка LOL антистресс
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">6 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/7.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Футболка Play Today жёлтая
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">6 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+            </div>
+            <span class="products-card__img">
+              <img data-lazy="./img/products/8.png" alt="">
+            </span>
+            <div class="products-card__title">
+              Боди Zara Моя Горошинка  серое в полоску Боди Zara Моя Горошинка Боди Zara Моя Горошинка Боди Zara Моя Горошинка
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">6 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="visited">
+    <div class="container">
+
+      <h4>Ранее вы смотрели</h4>
+
+      <div class="visited-products">
+        <div class="resent-products--item">
+          <a href="./products-page.html" class="products-card">
+            <div class="products-card__head">
+              <span class="new">new</span>
+              <span class="sale">-30%</span>
+              <span class="bonus">+1000Б</span>
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/1.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Боди Zara Моя Горошинка серое в полоску
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span class="active"></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price sale">
+                <span class="old">7 200 ₽</span>
+                <span class="price">116 750 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist active"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="resent-products--item">
+          <a href="./products-page2.html" class="products-card">
+            <div class="products-card__head">
+              <span class="top">хит</span>
+              <span class="new">new</span>
+              <span class="installments">0-0-12</span>
+            </div>
+            <div class="products-card__img">
+              <img data-lazy="./img/products/2.png" alt="">
+            </div>
+            <div class="products-card__title">
+                Сумочка LOL антистресс
+            </div>
+            <div class="products-card__review">
+              <div class="star">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="quote">18</span>
+            </div>
+            <div class="products-card__bottom">
+              <div class="products-card__bottom__price">
+                <span class="bonus">&nbsp;</span>
+                <span class="price">999 ₽</span>
+              </div>
+              <div class="products-card__bottom__buy">
+                <span class="wishlist"></span>
+                <span class="cart"></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="toTop"><span><i></i>Наверх</span></div>
+</main>
+
+<footer>
+  <div class="container">    
+    <div class="email-form">
+      <div class="email-form-block">
+        <div class="email-form-block__title">
+          <img src="./img/email-form/email.svg" alt=" Узнавайте о выгодных  предложениях первыми!">
+          <p>Узнавайте о выгодных предложениях первыми!</p>
+        </div>
+        <form class="email-form-block__form">
+          <input type="email" name="email" value="" placeholder="Ваш e-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>ВсёДляДеток.ру</b></p>
+          <ul>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Пункты выдачи</a></li>
+              <li><a href="">Розничные магазины</a></li>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Отзывы</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Покупателям</b></p>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Обратная связь</b></p>
+          <ul>
+            <li><a href="">Заказать звонок</a></li>
+            <li><a href="">Заявка на возврат</a></li>
+            <li><a href="">Заявка на обмен</a></li>
+            <li><a href="">Оставить отзыв</a></li>
+            <li><a href="">Благодарность</a></li>
+            <li><a href="">Пожаловаться</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
+        <p><b>Сообщество </b></p>
+        <p>Мы в социальных сетях</p>
+        <div class="social">
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© 2019-2020. ВсёДляДеток.ру</p>
+      <p class="policy">
+        <a href="">Пользовательское соглашение</a>
+        <a href="">Политика конфеденциальности</a>
+      </p>
+      <p class="created">
+        Разработка сайта: <a href="">Смарт Сателлит</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal">
+  <div class="container">
+    <!-- Modal Menu -->
+    <div class="modal-body menu" data-modal="menu">
+      <span class="close" data-close="close"></span>
+      <a href="" class="button login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="/" class="button lk hidden">
+          <img src="./img/nav/mobile/lk.svg" alt="">
+          Гость</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Розничные магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Покупателям
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Проверка заказа</a></li>
+          <li><a href="">Доставка и оплата</a></li>
+          <li><a href="">Гарантии и возврат</a></li>
+          <li><a href="">Покупай со Сбербанком</a></li>
+          <li><a href="">Полезные материалы</a></li>
+          <li><a href="">Бонусная программа</a></li>
+          <li><a href="">Подарочные карты</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Заказать звонок</a></li>
+          <li><a href="">Заявка на возврат</a></li>
+          <li><a href="">Заявка на обмен</a></li>
+          <li><a href="">Оставить отзыв</a></li>
+          <li><a href="">Благодарность</a></li>
+          <li><a href="">Пожаловаться</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <p>
+          <b>
+            Сообщество
+          </b>
+        </p>
+        <div class="social-link">
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal City -->
+    <div class="modal-body city" data-modal="city">
+      <span class="close" data-close="close"></span>
+      <div class="city-wrapper fade active">
+        <p class="modal-body__head">Ваш город:</p>
+        <p class="modal-body__city">Санкт-Петербург</p>
+        <p class="modal-body__desc">От города зависят условия доставки</p>
+        <div class="modal-body__button">
+          <button class="btn btn-accent" data-close="close">Да</button>
+          <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
+        </div>
+      </div>
+      <form action="/" method="post" class="city-list">
+        <label for="city">Введите название</label>
+        <input id="city" type="text" name="city" class="city" placeholder="Ваш город">
+      </form>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal-body login" data-modal="login">
+      <span class="close" data-close="close"></span>
+      <form action="/" method="post" class="login-form">
+        <p><b>Вход или регистрация</b></p>
+        <label for="phone">Введите номер телефона</label>
+        <input type="tel" id="phone" name="phone" class="phone-mask" required>
+        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+      </form>
+      <form action="/" method="post" class="sms-form">
+        <p><b>Введите код из смс</b></p>
+        <div class="signin-sms__wrap">
+          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+        </div>
+      </form>
+      <div class="complete"><p>Готово</p></div>
+    </div>
+
+    <!-- IF PRODUCT-PAGE -->
+    <!-- Modal REVIEW -->
+    <div class="modal-body review" data-modal="review">
+      <span class="close" data-close="close"></span>
+      <p><b>Добавить отзыв о товаре</b></p>
+      <form action="/" method="post">
+        <div class="form-row df">
+          <div>
+            <label for="user-review">Ваше имя</label>
+            <input type="text" id="user-review" name="user" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+          </div>
+          <div class="form-col">
+            <p>Оцените товар</p>
+            <div class="rating-area">
+              <input type="radio" id="star-5" name="rating" value="5" checked>
+              <label for="star-5" title="Оценка «5»"></label>	
+              <input type="radio" id="star-4" name="rating" value="4">
+              <label for="star-4" title="Оценка «4»"></label>    
+              <input type="radio" id="star-3" name="rating" value="3">
+              <label for="star-3" title="Оценка «3»"></label>  
+              <input type="radio" id="star-2" name="rating" value="2">
+              <label for="star-2" title="Оценка «2»"></label>    
+              <input type="radio" id="star-1" name="rating" value="1">
+              <label for="star-1" title="Оценка «1»"></label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="plus">Понравилось</label>
+          <textarea name="plus" id="plus"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="minus">Не понравилось</label>
+          <textarea name="minus" id="minus"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="msg-review">Комментарий</label>
+          <textarea name="msg" id="msg-review"></textarea>
+        </div>
+        <div class="input__wrapper">
+          <input type="file" name="file" id="input__file" class="input input__file" multiple>
+          <label for="input__file" class="input__file-button">
+              <span class="input__file-icon-wrapper">Прикрепить файл</span>
+              <span class="input__file-button-text">Файл не выбран</span>
+          </label>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+          <p>Нажимая кнопку вы даете согласие на обработку ваших персональных данных в соответствии с Условиями</p>
+        </div>
+      </form>
+    </div>
+    <!-- Modal QUESTION -->
+    <div class="modal-body question" data-modal="question">
+      <span class="close" data-close="close"></span>
+      <p><b>Задать вопрос о товаре</b></p>
+      <form action="/" method="post">
+        <div class="form-row df">
+          <div>
+            <label for="user-question">Ваше имя</label>
+            <input type="text" id="user-question" name="user" placeholder="" required>
+          </div>
+          <div class="form-col">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="msg-question">Ваш вопрос</label>
+          <textarea name="msg" id="msg-question"></textarea>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+          <p>Нажимая кнопку вы даете согласие на обработку ваших персональных данных в соответствии с Условиями</p>
+        </div>
+      </form>
+    </div>
+    <!-- Modal OneClick -->
+    <div class="modal-body oneclick" data-modal="oneclick">
+      <span class="close" data-close="close"></span>
+      <p><b>Заказ в один клик</b></p>
+      <form action="/" method="post">
+        <div class="form-row">
+          <label for="user-oneclick">Ваш имя</label>
+          <input type="text" name="user-oneclick" id="user-oneclick" class="name" placeholder="" pattern="^[А-Яа-яЁё\s]+$" required>
+        </div>
+        <div class="form-row">
+          <label for="userphone">Телефон</label>
+          <input type="tel" id="userphone" name="phone-oneclick" class="phone-mask" required>
+        </div>
+        <div class="submit">
+          <button type="submit" class="btn btn-accent">Отправить</button>
+        </div>
+      </form>
+    </div>
+     <!-- Modal Size Table -->
+     <div class="modal-body size" data-modal="size">
+      <span class="close" data-close="close"></span>
+      <div class="size-table">
+        <p class="caption">Таблица размеров</p>
+        <p class="desc">Одежда для девочек и мальчиков</p>
+        <div class="size-table--head">
+            <div class="size-table--left">
+              <img src="./img/products/card/size-table.png" alt="">
+            </div>
+            <ul class="size-table--right">
+                <li>Обхват груди: <span>по выступающим точкам груди</span></li>
+                <li>Обхват талии: <span>по самой узкой части талии</span></li>
+                <li>Обхват бедер: <span>по выступающим точкам бедер</span></li>
+            </ul>
+        </div>
+        <div class="size-table--wrap clothes">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+                <td>Рост, см</td>
+                <td>Грудь, см</td>
+                <td>Талия, см</td>
+                <td>Бёдра, см</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>98</td>
+                <td>2-3 года</td>
+                <td>92-98</td>
+                <td>55</td>
+                <td>52</td>
+                <td>57</td>
+              </tr>
+              <tr>
+                <td>104</td>
+                <td>4 года</td>
+                <td>98-104</td>
+                <td>55</td>
+                <td>53</td>
+                <td>58</td>
+              </tr>
+              <tr>
+                <td>110</td>
+                <td>4,5 года</td>
+                <td>104-110</td>
+                <td>57</td>
+                <td>54</td>
+                <td>59</td>
+              </tr>
+              <tr>
+                <td>116</td>
+                <td>5 лет</td>
+                <td>110-116</td>
+                <td>59</td>
+                <td>55</td>
+                <td>61</td>
+              </tr>
+              <tr>
+                <td>122</td>
+                <td>6 лет</td>
+                <td>116-122</td>
+                <td>62</td>
+                <td>57</td>
+                <td>64</td>
+              </tr>
+              <tr>
+                <td>128</td>
+                <td>7 лет</td>
+                <td>122-128</td>
+                <td>65</td>
+                <td>59</td>
+                <td>67</td>
+              </tr>
+              <tr>
+                <td>134</td>
+                <td>8 лет</td>
+                <td>128-134</td>
+                <td>68</td>
+                <td>61</td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>140</td>
+                <td>9 лет</td>
+                <td>134-140</td>
+                <td>71</td>
+                <td>63</td>
+                <td>73</td>
+              </tr>
+              <tr>
+                <td>146</td>
+                <td>10 лет</td>
+                <td>140-146</td>
+                <td>74</td>
+                <td>65</td>
+                <td>76</td>
+              </tr>
+              <tr>
+                <td>152</td>
+                <td>11 лет</td>
+                <td>146-152</td>
+                <td>79</td>
+                <td>68</td>
+                <td>81</td>
+              </tr>
+              <tr>
+                <td>158-164</td>
+                <td>12 лет</td>
+                <td>158-164</td>
+                <td>82-84</td>
+                <td>70-72</td>
+                <td>83-86</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <p class="caption">Таблица размеров</p>
+        <p class="desc">Обувь для девочек и мальчиков</p>
+        <div class="size-table--wrap shoes">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+                <td>Длина стопы, см</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>17</td>
+                <td>0-1</td>
+                <td>10,5</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>0-1</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td>19</td>
+                <td>0-1</td>
+                <td>11,5</td>
+              </tr>
+              <tr>
+                <td>20</td>
+                <td>1-2</td>
+                <td>12,5</td>
+              </tr>
+              <tr>
+                <td>21</td>
+                <td>1-2</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <td>22</td>
+                <td>1-2</td>
+                <td>13,5</td>
+              </tr>
+              <tr>
+                <td>23</td>
+                <td>2-3</td>
+                <td>14,5</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>2-3</td>
+                <td>15</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>3-4</td>
+                <td>15,5</td>
+              </tr>
+              <tr>
+                <td>25,5</td>
+                <td>3-4</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>26</td>
+                <td>3-4</td>
+                <td>16,5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+
+        <!-- <p class="caption">Таблица размеров</p>
+        <p class="desc">Перчатки и варежки</p>
+        <div class="size-table--wrap gloves">
+          <table>
+            <thead>
+              <tr>
+                <td>Размер</td>
+                <td>Возраст</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>11</td>
+                <td>0-12 мес.</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>12-24 мес.</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>2-4 года</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>4-6 лет</td>
+              </tr>
+              <tr>
+                <td>16</td>
+                <td>7-10 лет</td>
+              </tr>
+              <tr>
+                <td>18</td>
+                <td>10-12 лет</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <script src="./js/scripts.min.js"></script>
+  <link rel="stylesheet" href="./css/main.min.css">
+
+
+  <link rel="stylesheet" href="./js/slick/slick.css">
+  <script src="./js/slick/slick.min.js"></script>
+  <script src="./js/fancybox/jquery.fancybox.min.js"></script>
+  <link rel="stylesheet" href="./js/fancybox/jquery.fancybox.min.css">
+
+  <script>
+    //Preload
+    const cachImg = new Array();
+    function preloadcachImg(...cachImg) {
+        cachImg.forEach((image, i) => {
+            image = new Image();
+            image.src = preloadcachImg.arguments[i];
+        });
+    };
+    // Предварительная загрузка картинок слайдера
+    preloadcachImg(
+        './img/products/card/1.jpg',
+        './img/products/card/2.jpg',
+        './img/products/card/3.jpg',
+        './img/products/card/4.jpg',
+        './img/products/card/5.jpg',
+        './img/products/card/6.jpg'
+    );
+
+    $( document ).ready(function() {
+      
+      const thumb = document.querySelectorAll('.products-page-body__item__left__thumb li')
+      let slideCount = thumb.length
+      if (thumb.length < 6) {
+        thumb.forEach((item,index) => {
+          item.addEventListener('click', () => {
+            document.querySelector('.products-page-body__item__left__thumb li.slick-current').classList.remove('slick-current')
+            item.classList.add('slick-current')
+            imgSlider.slick('slickGoTo', index)
+          })
+        })
+      }
+      
+
+      $('.products-page-body__item__left__thumb').slick({
+        vertical: true,
+        infinite: thumb.length >= 6 ? true : false,
+        slidesToShow: 6,
+        asNavFor: thumb.length >= 6 ? '.products-page-body__item__right__img__wrapp' : false,
+        focusOnSelect: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 4,
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 5,
+            }
+          }
+        ]
+      });    
+      
+      const imgSlider = $('.products-page-body__item__right__img__wrapp').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        asNavFor: '.products-page-body__item__left__thumb',
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              dots: true
+            }
+          }
+        ]
+      });
+
+      const disableScroll = () => {
+        document.body.classList.add('no-scroll')
+      }
+      const enableScroll = () => {
+        document.body.classList.remove('no-scroll') 
+      }
+      
+      let galleryIsOpen = false;
+      const card = document.querySelector('.products-page-body__item')
+          
+      const closeGalleryEsc = () => {
+        if (event.keyCode == 27) {
+          closeGallery()
+        }
+      }
+      const openGallery = () => {
+        if ( galleryIsOpen == false) {
+          disableScroll()
+          card.classList.add('open')
+          setTimeout(() => {
+            document.body.append(card)
+            setTimeout(() => {
+              card.classList.add('is-active')
+              imgSlider.slick('setPosition')     
+            }, 1);    
+          }, 1);
+          galleryIsOpen = true
+          document.addEventListener('keydown', closeGalleryEsc)
+        } else {
+          closeGallery()
+        }
+      }
+      const closeGallery = () => {
+        if ( galleryIsOpen == true) {
+          const parent = document.querySelector('.products-page-body')
+          const nextElem = document.querySelector('.products-page-body__buy')
+          card.classList.remove('is-active')
+          card.classList.remove('open')
+          document.body.removeChild(card)
+          parent.insertBefore(card, nextElem)
+          imgSlider.slick('setPosition')
+          galleryIsOpen = false
+          document.removeEventListener('keydown', closeGalleryEsc)
+          enableScroll()
+        }
+      }
+
+      if (document.body.clientWidth < 767) {
+        const imgList = document.querySelectorAll('.products-page-body__item__right__img__wrapp img')
+        for(elem of imgList) {
+          elem.addEventListener('click', openGallery)
+        }
+      }
+      const zoomBtn = document.querySelector('.products-page-body__item__right__img .zoom')
+      const closeBtn = document.querySelector('.products-page-body__item .close')
+      zoomBtn.addEventListener('click', openGallery)
+      closeBtn.addEventListener('click', closeGallery)
+
+      $('.resent-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      $('.visited-products').slick({
+        lazyLoad: 'ondemand',
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+      
+      $('[data-fancybox="gallery"]').fancybox({
+        loop: true,
+        infobar: false,
+        toolbar: false,
+      });
+    
+      // Back to top button
+      let backToTop = function() {
+            var el = $( '.toTop' );
+            el.hide()
+        $( window ).scroll(function() {
+          if( $( this ).scrollTop() < 50 ) {
+            el.fadeOut();
+          } else {
+            el.fadeIn();
+          }
+        });
+        el.click( function() {
+          $( 'body,html' ).animate({
+            scrollTop: 0
+          }, 500);
+          return false;
+        });
+        }
+        backToTop()
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      if ( document.querySelector('.products-page-body__item__right__tag .wishlist') ) {
+        const wishlist = document.querySelector('.products-page-body__item__right__tag .wishlist')
+        wishlist.addEventListener('click', () => wishlist.classList.toggle('active'))
+      }
+
+      if ( document.querySelector('[data-target="review"]') ) {
+          //Input file
+          let inputs = document.querySelectorAll('.input__file')
+          inputs.forEach(input =>{
+              let label = input.nextElementSibling,
+              labelVal = label.querySelector('.input__file-button-text').innerText;
+          
+              input.addEventListener('change', function (e) {
+                  let countFiles = '';
+                  if (this.files && this.files.length >= 1) {
+                      countFiles = this.files.length;
+                      label.classList.add('active')
+                  } else {
+                      label.classList.remove('active')
+                  }
+              
+                  if (countFiles)
+                      label.querySelector('.input__file-button-text').innerText = 'Выбрано файлов: ' + countFiles;
+                  else
+                      label.querySelector('.input__file-button-text').innerText = labelVal;
+              });
+          });
+      }
+    });
+  </script>
+</body>
+</html>

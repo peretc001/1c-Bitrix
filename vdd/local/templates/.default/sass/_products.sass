@@ -1,0 +1,818 @@
+.product-item-image-wrapper
+    margin-bottom: 0
+    padding-top: 100%
+    transition: none
+
+.products
+    h1
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
+
+    .products-list
+        padding: 0 .5em
+
+        [class*='col-']
+            margin-bottom: 1em
+            padding-left: 0.5em
+            padding-right: 0.5em
+
+    &-sort
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        margin-bottom: 1.5em
+        p
+            display: none
+            margin: 0
+        &-block
+            &--select
+                display: none
+                cursor: pointer
+        a
+            display: inline-block
+            flex: 0 0 auto
+            color: #B8B8B8
+            font-weight: bold
+            position: relative
+            transition: color .2s ease
+            &:not(:first-child)
+                margin-left: 2em
+            &.active,
+            &:hover
+                color: $accent
+        .open-filter
+            display: none
+            cursor: pointer
+
+    &-card
+        background-color: #ffffff
+        border-radius: 1em
+        padding: 0
+        &__head
+            align-items: center
+            display: flex
+            justify-content: flex-start
+            padding: 1em
+            padding-bottom: .5em
+            position: relative
+            span
+                display: block
+                flex: 0 0 48px
+                height: 25px
+                font-size: .8em
+                font-weight: bold
+                text-transform: uppercase
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 2px
+                &:not(:first-child)
+                    margin-left: .5em
+                &.top
+                    color: $yellow
+                    border: 1px solid $yellow
+                &.new
+                    color: $blue2
+                    border: 1px solid $blue2
+                &.sale
+                    color: $red
+                    border: 1px solid $red
+                &.bonus
+                    color: $accent
+                    border: 1px solid $accent
+                &.installment
+                    color: $green
+                    border: 1px solid $green
+                &.wishlist
+                    flex: 0 0 25px
+                    align-self: flex-end
+                    margin-left: auto
+                    cursor: pointer
+                    background-size: contain
+                    background-position: right
+                    background-repeat: no-repeat
+                    background-image: url('../img/nav/wishlist.svg')
+                    transition: transform .3s ease
+                    &.active
+                        background-image: url('../img/nav/wishlist-active.svg')
+                    &:hover
+                        transform: scale(1.1)
+        &__img
+            display: block
+            height: 250px
+            overflow: hidden
+            padding: 0 1em
+            margin-bottom: .5em
+            position: relative
+            span
+                background-repeat: no-repeat
+                background-size: contain
+                height: 100%
+                left: 1em
+                position: absolute
+                right: 1em
+                top: 0
+                width: auto
+            &.hasDetail
+                span
+                    transition: opacity .3s ease
+                    &:first-child
+                        opacity: 1
+                        z-index: 1
+                    &:last-child
+                        opacity: 0
+                        z-index: -1
+                &:hover
+                    span
+                        &:first-child
+                            opacity: 0
+                            z-index: -1
+                        &:last-child
+                            opacity: 1
+                            z-index: 1
+        &__title
+            display: block
+            padding: 0 1em
+            height: 32px
+            overflow: hidden
+            margin-bottom: .5em
+            a
+                color: $text !important
+                font-size: 1.15em
+        &__review
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            padding: 0 1em
+            .star
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                span
+                    display: inline-block
+                    width: 1.15em
+                    height: 1.15em
+                    background-size: 1.15em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('../img/review/star.svg')
+                    margin-right: 5px
+                    &.active
+                        background-image: url('../img/review/star-active.svg')
+            .quote
+                position: relative
+                font-size: .9em
+                color: $text
+                padding-left: 20px
+                margin-left: 1em
+                &::before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 100%
+                    height: 100%
+                    background-size: 18px
+                    background-position: left
+                    background-repeat: no-repeat
+                    background-image: url('../img/review/quote.svg')
+        
+        &__price
+            padding: 1em
+            padding-bottom: .5em
+            .old
+                display: inline-block
+                color: $text
+                font-size: 1em
+                font-weight: bold
+                margin: 0
+                span
+                    position: relative
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        width: 100%
+                        height: 1px
+                        background: $text
+                        transform: rotate(-12deg)
+            .bonus
+                display: inline-block
+                color: $accent
+                font-size: 1em
+                font-weight: bold
+                margin: 0
+            .price
+                display: block
+                color: $text
+                font-size: 1.8em
+                font-weight: bold
+                &.new
+                    color: $red
+
+        &__buy
+            padding-bottom: 1em
+            .addToBasket
+                align-items: center
+                display: flex
+                justify-content: flex-start
+                padding: 0 1em 0 1em
+                .btn
+                    margin: 0
+                    font-weight: bold
+                    height: 40px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    padding: 0
+                    &:first-child
+                        flex: 1 1 auto
+                        border-radius: 4px 0 0 4px
+                        font-size: 1.3em
+                    &:not(:first-child)
+                        flex: 0 0 90px
+                        border-radius: 0 4px 4px 0
+                        font-size: 1em
+                        border-left: none
+
+            .addToBasket,
+            .inBasket
+                position: relative
+                &:before
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: 0
+                    width: 100%
+                    height: 100%
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-size: 40px
+                    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                    display: none
+                &.progress
+                    &:before
+                        display: block
+                    .btn
+                        animation: add2basket 2s ease forwards
+
+            .inBasket
+                display: flex
+                justify-content: flex-start
+                padding: 0 1em 0 1em
+
+                .hasBasket
+                    background: $accent
+                    flex: 1 1 auto
+                    border-radius: 4px 0 0 4px
+                    border: none
+                    transition: background .3s ease
+                    height: 40px
+                    position: relative
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex-wrap: wrap
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 0
+                        width: 100%
+                        height: 100%
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-size: 40px
+                        background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                        display: none
+                    &:hover
+                        background: darken($accent, 5%)
+                    small
+                        display: block
+                        margin-top: 2px
+                    &.progress
+                        background-color: #ffebff
+                        &:before
+                            display: block
+                            animation: load 2s ease
+
+                    a
+                        display: block
+                        color: #ffffff
+                        margin: 0
+                        text-align: center
+                        text-decoration: none
+                        font-size: .9em
+                        &:first-child
+                            font-weight: bold
+                        small
+                            font-size: .8em
+                            font-weight: normal
+                .addToBasketPlus
+                    flex: 0 0 90px
+                    border-radius: 0 4px 4px 0
+                    border: none
+                    padding: .4em 0
+                    background: transparent
+                    border: 1px solid $yellow
+                    border-left: none
+                    color: $yellow
+                    font-weight: bold
+                    transition: background .3s ease
+                    &:hover
+                        background: transparent
+                        color: $yellow
+                        border: 1px solid $yellow
+                        border-left: none
+                    &:disabled
+                        color: $grey !important
+                        border-color: $grey !important
+                        border-left: none
+                        &:hover
+                            color: $grey
+                            border-color: $grey
+                            background: transparent !important
+
+        &__add
+            padding: 1em
+            position: relative
+            &:before
+                content: ''
+                position: absolute
+                left: 0
+                top: 0
+                width: 100%
+                height: 100%
+                background-position: center
+                background-repeat: no-repeat
+                background-size: 40px
+                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMTIwIDMwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxMjAgMzA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojQzI1MUMwO30uc3Qxe2ZpbGw6I0MyNTFDMDtmaWxsLW9wYWNpdHk6MC4zO308L3N0eWxlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjE1IiBjeT0iMTUiIHI9IjE1Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjE1IiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMTUiIHZhbHVlcz0iMTU7OTsxNSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgcmVzdGFydD0iYWx3YXlzIiB0bz0iMSIgdmFsdWVzPSIxOy41OzEiPjwvYW5pbWF0ZT48L2NpcmNsZT48Y2lyY2xlIGNsYXNzPSJzdDEiIGN4PSI2MCIgY3k9IjE1IiByPSI5Ij48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9InIiIGJlZ2luPSIwcyIgY2FsY01vZGU9ImxpbmVhciIgZHVyPSIwLjhzIiBmaWxsPSJyZW1vdmUiIGZyb209IjkiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSI5IiB2YWx1ZXM9Ijk7MTU7OSI+PC9hbmltYXRlPjxhbmltYXRlICBhY2N1bXVsYXRlPSJub25lIiBhZGRpdGl2ZT0icmVwbGFjZSIgYXR0cmlidXRlTmFtZT0iZmlsbC1vcGFjaXR5IiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIwLjUiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiByZXN0YXJ0PSJhbHdheXMiIHRvPSIwLjUiIHZhbHVlcz0iLjU7MTsuNSI+PC9hbmltYXRlPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjEwNSIgY3k9IjE1IiByPSIxNSI+PGFuaW1hdGUgIGFjY3VtdWxhdGU9Im5vbmUiIGFkZGl0aXZlPSJyZXBsYWNlIiBhdHRyaWJ1dGVOYW1lPSJyIiBiZWdpbj0iMHMiIGNhbGNNb2RlPSJsaW5lYXIiIGR1cj0iMC44cyIgZmlsbD0icmVtb3ZlIiBmcm9tPSIxNSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjE1IiB2YWx1ZXM9IjE1Ozk7MTUiPjwvYW5pbWF0ZT48YW5pbWF0ZSAgYWNjdW11bGF0ZT0ibm9uZSIgYWRkaXRpdmU9InJlcGxhY2UiIGF0dHJpYnV0ZU5hbWU9ImZpbGwtb3BhY2l0eSIgYmVnaW49IjBzIiBjYWxjTW9kZT0ibGluZWFyIiBkdXI9IjAuOHMiIGZpbGw9InJlbW92ZSIgZnJvbT0iMSIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiIHJlc3RhcnQ9ImFsd2F5cyIgdG89IjEiIHZhbHVlcz0iMTsuNTsxIj48L2FuaW1hdGU+PC9jaXJjbGU+PC9zdmc+')
+                display: none
+
+            .addToCart
+                width: 100%
+                margin: 0
+                font-weight: bold
+                height: 40px
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 0
+                font-size: 1.3em
+                border-radius: 4px
+
+            &.process
+                &:before
+                    display: block
+                .addToCart
+                    animation: add2basket 2s ease forwards
+
+
+@keyframes add2basket
+    from
+        opacity: 1
+    to
+        opacity: 0
+@keyframes load
+    from
+        opacity: 0
+    to
+        opacity: .8
+
+.not_find
+    display: block
+    text-align: center
+    padding: 3em 0
+
+.resent,
+.visited
+    position: relative
+    h4
+        font-size: 2.5em
+        font-weight: bold
+        line-height: 1
+        padding: 2em 0 .5em 0
+    .slick-track
+        margin: 0
+    .slick-list
+        margin: 0 -1em
+    .slick-slide
+        outline: none
+        padding: 0 .5em
+
+    .slick-next,
+    .slick-prev
+        position: absolute
+        top: -40px
+        transform: translateY(-50%)
+        background: #fff
+        z-index: 1
+        background-repeat: no-repeat
+        background-size: 12px
+        border-radius: 50%
+        font-size: 0
+        width: 36px
+        height: 36px
+        padding: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        outline: none
+        border: none
+        cursor: pointer
+    .slick-next
+        right: 0
+        background-position: 55%
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQUM1MkJGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+    .slick-prev
+        right: 45px
+        background-position: 45%
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIiBzdHlsZT0iZmlsbDojQUM1MkJGIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+.visited
+    .slick-track
+        margin-left: 0
+
+@media screen and ( max-width: 1199.98px )
+    .products
+        &-sort
+            a
+                font-size: .9em
+                &:not(:first-child)
+                    margin-left: .5em
+        &-card
+            &__head
+                span
+                    &.hidden
+                        display: none
+            &__buy
+                .addToBasket
+                    .btn
+                        &:first-child
+                            font-size: 1.1em
+                        &:not(:first-child)
+                            flex: 0 0 70px
+                            font-size: .9em
+
+                .inBasket
+                    .addToBasketPlus
+                        flex: 0 0 70px
+                        font-size: .9em
+
+@media screen and ( max-width: 991.98px )
+    .products
+        &-sort
+            &-block
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                position: relative
+                padding: 0
+                margin: 0
+                p
+                    display: block
+                    flex: 0 0 auto
+                &--select
+                    display: block
+                    padding-left: 1em
+                    position: relative
+                    z-index: 1
+                    font-weight: bold
+                    overflow: hidden
+                    white-space: nowrap
+                    text-overflow: ellipsis
+                    width: 180px
+                    padding-right: 1em
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        right: 0
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 1em
+                        height: 1em
+                        background-size: cover
+                        background-position: center right
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MS45OTYgNDkxLjk5NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkxLjk5NiA0OTEuOTk2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ4NC4xMzIsMTI0Ljk4NmwtMTYuMTE2LTE2LjIyOGMtNS4wNzItNS4wNjgtMTEuODItNy44Ni0xOS4wMzItNy44NmMtNy4yMDgsMC0xMy45NjQsMi43OTItMTkuMDM2LDcuODZsLTE4My44NCwxODMuODQ4ICAgIEw2Mi4wNTYsMTA4LjU1NGMtNS4wNjQtNS4wNjgtMTEuODItNy44NTYtMTkuMDI4LTcuODU2cy0xMy45NjgsMi43ODgtMTkuMDM2LDcuODU2bC0xNi4xMiwxNi4xMjggICAgYy0xMC40OTYsMTAuNDg4LTEwLjQ5NiwyNy41NzIsMCwzOC4wNmwyMTkuMTM2LDIxOS45MjRjNS4wNjQsNS4wNjQsMTEuODEyLDguNjMyLDE5LjA4NCw4LjYzMmgwLjA4NCAgICBjNy4yMTIsMCwxMy45Ni0zLjU3MiwxOS4wMjQtOC42MzJsMjE4LjkzMi0yMTkuMzI4YzUuMDcyLTUuMDY0LDcuODU2LTEyLjAxNiw3Ljg2NC0xOS4yMjQgICAgQzQ5MS45OTYsMTM2LjkwMiw0ODkuMjA0LDEzMC4wNDYsNDg0LjEzMiwxMjQuOTg2eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6IzQ3NDc0NyI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        transition: transform .3s ease
+                    &.active
+                        &::before
+                            transform: translateY(-50%) rotate(180deg)
+
+                &--options
+                    display: none
+                    position: absolute
+                    left: 0
+                    bottom: 0
+                    transform: translateY(120%)
+                    flex-wrap: wrap
+                    background: #ffffff
+                    border-radius: 4px
+                    padding: 1em
+                    width: 200px
+                    overflow: hidden
+                    opacity: 0
+                    z-index: 2
+                    pointer-events: none
+                    transition: none
+                    &.fade
+                        display: flex
+                        transition: opacity .3s ease-out .1s, transform .3s ease-out .1s
+                    &.active
+                        opacity: 1
+                        pointer-events: all
+                        transform: translateY(105%)
+            a
+                flex: 0 0 100%
+                padding: .5em 0
+                color: $text
+                &:not(:first-child)
+                    margin-left: 0
+                &.sort
+                    padding-right: 0
+                    &::before
+                        display: none
+
+@media screen and ( max-width: 767.98px )
+    .products
+        position: relative
+        h1
+            font-size: 2em
+
+        &-sort
+            .open-filter
+                display: flex
+                margin-left: auto
+                align-items: center
+                justify-content: center
+                position: relative
+                background: $accent
+                color: #fff
+                padding: .8em 1em
+                border-radius: 4px
+                width: 150px
+                &::before
+                    content: ''
+                    width: 1em
+                    height: 1em
+                    margin-right: 0.5em
+                    background-size: 1em
+                    background-position: center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDk3MS45ODYgOTcxLjk4NiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgOTcxLjk4NiA5NzEuOTg2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PGc+PGc+Cgk8cGF0aCBkPSJNMzcwLjIxNiw0NTkuM2MxMC4yLDExLjEsMTUuOCwyNS42LDE1LjgsNDAuNnY0NDJjMCwyNi42MDEsMzIuMSw0MC4xMDEsNTEuMSwyMS40bDEyMy4zLTE0MS4zICAgYzE2LjUtMTkuOCwyNS42LTI5LjYwMSwyNS42LTQ5LjJWNTAwYzAtMTUsNS43LTI5LjUsMTUuOC00MC42MDFMOTU1LjYxNSw3NS41YzI2LjUtMjguOCw2LjEwMS03NS41LTMzLjEtNzUuNWgtODczICAgYy0zOS4yLDAtNTkuNyw0Ni42LTMzLjEsNzUuNUwzNzAuMjE2LDQ1OS4zeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgo8L2c+PC9nPiA8L3N2Zz4=')
+                    transition: background .3s ease, transform .3s ease
+                &.active
+                    &::before
+                        transform: rotate(180deg)
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgY2xhc3M9IiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMzAwLjE4OCwyNDZMNDg0LjE0LDYyLjA0YzUuMDYtNS4wNjQsNy44NTItMTEuODIsNy44Ni0xOS4wMjRjMC03LjIwOC0yLjc5Mi0xMy45NzItNy44Ni0xOS4wMjhMNDY4LjAyLDcuODcyICAgIGMtNS4wNjgtNS4wNzYtMTEuODI0LTcuODU2LTE5LjAzNi03Ljg1NmMtNy4yLDAtMTMuOTU2LDIuNzgtMTkuMDI0LDcuODU2TDI0Ni4wMDgsMTkxLjgyTDYyLjA0OCw3Ljg3MiAgICBjLTUuMDYtNS4wNzYtMTEuODItNy44NTYtMTkuMDI4LTcuODU2Yy03LjIsMC0xMy45NiwyLjc4LTE5LjAyLDcuODU2TDcuODcyLDIzLjk4OGMtMTAuNDk2LDEwLjQ5Ni0xMC40OTYsMjcuNTY4LDAsMzguMDUyICAgIEwxOTEuODI4LDI0Nkw3Ljg3Miw0MjkuOTUyYy01LjA2NCw1LjA3Mi03Ljg1MiwxMS44MjgtNy44NTIsMTkuMDMyYzAsNy4yMDQsMi43ODgsMTMuOTYsNy44NTIsMTkuMDI4bDE2LjEyNCwxNi4xMTYgICAgYzUuMDYsNS4wNzIsMTEuODI0LDcuODU2LDE5LjAyLDcuODU2YzcuMjA4LDAsMTMuOTY4LTIuNzg0LDE5LjAyOC03Ljg1NmwxODMuOTYtMTgzLjk1MmwxODMuOTUyLDE4My45NTIgICAgYzUuMDY4LDUuMDcyLDExLjgyNCw3Ljg1NiwxOS4wMjQsNy44NTZoMC4wMDhjNy4yMDQsMCwxMy45Ni0yLjc4NCwxOS4wMjgtNy44NTZsMTYuMTItMTYuMTE2ICAgIGM1LjA2LTUuMDY0LDcuODUyLTExLjgyNCw3Ljg1Mi0xOS4wMjhjMC03LjIwNC0yLjc5Mi0xMy45Ni03Ljg1Mi0xOS4wMjhMMzAwLjE4OCwyNDZ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiNGRkZGRkYiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+        
+
+        &-card
+            &__head
+                span
+                    font-size: 11px
+                    width: 40px
+                    &.wishlist
+                        width: 28px
+                    &.hidden
+                        display: none
+
+            &__img
+                height: 220px
+                span
+                    background-position: top center
+                    background-size: cover
+                &.hasDetail
+                    span
+                        transition: none
+                    &:hover
+                        span
+                            &:first-child
+                                opacity: 1
+                                z-index: 1
+                            &:last-child
+                                opacity: 0
+                                z-index: -1
+
+            &__buy
+                .addToBasket
+                    .btn
+                        &:not(:first-child)
+                            flex: 0 0 70px
+                            font-size: .9em
+
+                .inBasket
+                    .addToBasketPlus
+                        flex: 0 0 70px
+                        font-size: .9em
+    .resent,
+    .visited
+        h4
+            font-size: 2em
+        .slick-next,
+        .slick-prev
+            top: -35px
+
+@media screen and ( max-width: 576.98px )
+    .products
+        h1
+            font-size: 1.8em
+        .products-list
+            [class*="col-"]
+                margin-bottom: .5em
+                padding-right: 0.25em
+                padding-left: 0.25em
+
+        &-sort
+            &-block
+                display: flex
+                flex-wrap: wrap
+                p
+                    flex: 0 0 100%
+                    font-size: 0.9em
+                    margin-bottom: 0.5em
+                &--select
+                    width: 180px
+                    font-size: 0.9em
+                    padding-left: 0
+                &--options
+                    width: 200px
+            a
+                font-size: 0.9em
+            .open-filter
+                width: 150px
+        
+        &-card
+            &__head
+                span
+                    font-size: 9px
+                    flex: 0 0 35px
+                    height: 20px
+                    &.wishlist
+                        flex: 0 0 25px
+
+            &__img
+                height: auto
+                padding-top: 100%
+
+            &__title
+                height: 30px
+                a
+                    font-size: 1em
+
+            &__buy
+                .addToBasket
+                    flex-wrap: wrap
+                    .btn
+                        flex: 0 0 100%
+                        height: 38px
+                        &:first-child
+                            font-size: .9em
+
+
+                .inBasket
+                    .hasBasket
+                        height: 38px
+                        a
+                            font-size: .7em
+
+    .resent,
+    .visited
+        h4
+            font-size: 1.6em
+        .slick-next,
+        .slick-prev
+            top: -30px
+        &-products
+            padding: 0 .5em
+        .slick-slide
+            padding: 0 .25em
+
+@media screen and ( max-width: 424.98px )
+    .products
+        &-card
+            &__review
+                .star
+                    span
+                        background-size: 1em
+                        height: 1em
+                        width: 1em
+                .quote
+                    margin-left: auto
+            &__buy
+                .addToBasket
+                    .btn
+                        height: 35px
+                        &:last-child
+                            flex: 0 0 55px
+                            font-size: .7em
+
+                .inBasket
+                    .hasBasket
+                        height: 35px
+                        a
+                            font-size: .7em
+                    .addToBasketPlus
+                        flex: 0 0 45px
+                        font-size: .8em
+    .resent,
+    .visited
+        h4
+            font-size: 1.3em
+        .slick-next,
+        .slick-prev
+            top: -25px
+
+@media screen and ( max-width: 374.98px )
+    .products
+        &-sort
+            p
+                b
+                    font-size: 0.8em
+            .open-filter
+                width: 2em
+                height: 2em
+                overflow: hidden
+                padding-left: 2em
+                color: $accent
+                &::before
+                    position: absolute
+                    left: 50%
+                    top: 50%
+                    transform: translateY(-50%) translateX(-50%)
+                    background-color: $accent
+                    width: 100%
+                    height: 100%
+                &.active
+                    &::before
+                        transform: translateY(-50%) translateX(-50%) rotate(180deg)
+
+            &__img
+                margin-bottom: 15px
+            &__title
+                font-size: 1em
+                margin-bottom: 15px
+            &__review
+                .star
+                    span
+                        width: .7em
+                        height: .7em
+                        background-size: .7em
+                .quote
+                    font-size: .7em
+                    margin-left: .5em
+            &__bottom
+                &__price
+                    .old
+                        font-size: .7em
+                    .price
+                        font-size: 1em
+                &__buy
+                    .wishlist,
+                    .cart
+                        margin-left: 0
+                        width: 1.4em
+                        height: 1.4em
+                        background-size: 1.4em
+        
+        &-card
+            &__head
+                span
+                    font-size: 7px
+                    flex: 0 0 25px
+                    &.installment
+                        flex: 0 0 30px
+            &__review
+                .star
+                    span
+                        background-size: .8em
+                        height: .8em
+                        width: .8em
+            &__buy
+                .addToBasket
+                    .btn
+                        height: 30px
+                        &:first-child
+                            font-size: .7em
+                        &:last-child
+                            flex: 0 0 50px
+                            font-size: .7em
+
+                .inBasket
+                    .hasBasket
+                        height: 30px
+                        a
+                            font-size: .6em
+                    .addToBasketPlus
+                        flex: 0 0 30px
+                        font-size: .55em
+
+    .resent,
+    .visited
+        h4
+            font-size: 1em

@@ -1,0 +1,333 @@
+@import '../_libs/var'
+.brands
+    &-header
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 2em
+        h1
+            font-size: 2.5em
+            font-weight: bold
+            margin: 0
+        &__favorite
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 2px solid $accent
+            border-radius: 4px
+            width: 300px
+            position: relative
+            overflow: hidden
+            &::before
+                content: ''
+                position: absolute
+                left: 2px
+                top: 0
+                width: 50%
+                transform: translateX(100%)
+                height: 100%
+                background: $accent
+                border-radius: 4px 0 0 4px
+                transition: transform .3s ease
+            span
+                flex: 0 0 50%
+                display: block
+                text-align: center
+                padding: 1em
+                cursor: pointer
+                z-index: 1
+                transition-delay: .3s
+                transition: opacity .3s ease, background .1s ease
+                &:first-child
+                    color: $text
+                    background: transparent
+                    border-radius: 0
+                &:last-child
+                    color: #ffffff
+                    background: $accent
+                    border-radius: 4px 0 0 4px
+            &.active
+                &::before
+                    left: 0
+                    width: 50%
+                    transform: translateX(0)
+                    border-radius: 0 4px 4px 0
+                span
+                    &:first-child
+                        color: #ffffff
+                        background: $accent
+                        border-radius: 0 4px 4px 0
+                    &:last-child
+                        color: $text
+                        background: transparent
+                        border-radius: 0
+
+    &-alphabet
+        border-top: 1px solid #DADADA
+        border-bottom: 1px solid #DADADA
+        padding: 2em 0
+        margin-bottom: 2em
+        .rus,
+        .eng
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            flex-wrap: wrap
+            font-size: 1.5em
+            font-weight: bold
+            span
+                margin-right: 1em
+                cursor: pointer
+                &:hover
+                    color: $accent
+                &.none
+                    color: $grey !important
+                    cursor: default
+                &.active
+                    color: $accent
+                a
+                    color: inherit
+        .rus
+            margin-bottom: 1em
+        .eng
+            span
+                &:last-child
+                    display: none
+
+    &-all
+        display: none
+        &.active
+            display: block
+        &-card
+            display: flex
+            justify-content: flex-start
+            margin-bottom: 3em
+            &__title
+                flex: 1 0 20%
+                color: $accent
+                font-size: 3.8em
+                font-weight: bold
+                text-align: left
+                line-height: 1
+            &__list
+                flex: 1 0 80%
+                padding-top: 0.5em
+                text-align: left
+                column-count: 5
+                a
+                    display: block
+                    color: $text
+                    margin-bottom: 0.8em
+                    &:hover
+                        color: $accent
+
+    &-list
+        display: none
+        align-items: center
+        flex-wrap: wrap
+        margin-bottom: 2em
+        padding-top: 2em
+        &.active
+            display: flex
+        a
+            display: block
+            flex: 16.666666%
+            min-width: 16.666666%
+            text-align: center
+            margin-bottom: 2em
+        &__img
+            margin-bottom: .5em
+            min-height: 200px
+            display: flex
+            align-items: center
+            justify-content: center
+            img
+                max-width: 100%
+                padding: 10px
+        p
+            color: $text
+
+    &-page
+        margin-bottom: 3em
+        h1
+            text-align: left
+            font-size: 2.5em
+            font-weight: bold
+            padding: 0
+            margin: 0
+            margin-bottom: 0.5em
+        &-about
+            background: rgba(171, 82, 191, 0.04)
+            padding: 30px 0
+            position: relative
+            &::after
+                content: ''
+                display: table
+                clear: both
+            p
+                color: #8C8C8C
+                line-height: 1.5
+                font-size: 1em
+                text-align: justify
+                text-align-last: left
+            img
+                float: right
+                margin-left: 40px
+                margin-bottom: 20px
+
+    &.heroes
+        .brands-header
+            &__favorite
+                border: 2px solid #FF5F5A
+                &::before
+                    background: #FF5F5A
+                span
+                    &:first-child
+                        background: transparent
+                    &:last-child
+                        background: #FF5F5A
+                &.active
+                   span
+                        &:first-child
+                            background: #FF5F5A
+                        &:last-child
+                            background: transparent
+        .brands-alphabet
+            .rus,
+            .eng
+                span
+                    &:hover
+                        color: #FF5F5A
+                    &.active
+                        color: #FF5F5A
+        .brands-all
+            &-card
+                &__title
+                    color: #FF5F5A
+                &__list
+                    a
+                        &:hover
+                            color: #FF5F5A
+
+@media screen and ( max-width: 1199.98px )
+    .brands
+        &-alphabet
+            .rus,
+            .eng
+                span
+                    margin-right: .5em
+        &-page
+            h1
+                padding: 0 calc(50% - 465px)
+
+@media screen and ( max-width: 991.98px )
+    .brands
+        &-alphabet
+            padding: 0
+            border: none
+            .rus,
+            .eng
+                flex-wrap: nowrap
+                overflow-x: auto
+                font-size: 1.5em
+                padding: 1em 0 0 0
+                margin: 0
+                border-top: 1px solid #DADADA
+                span
+                    flex: 0 0 5%
+                    margin-right: .5em
+                    margin-bottom: 0.5em
+                    &:last-child
+                        flex: 0 0 10%
+                &::-webkit-scrollbar
+                    display: none
+                &::-webkit-scrollbar-track
+                    display: none
+                &::-webkit-scrollbar-thumb
+                    display: none
+            .eng
+                border-bottom: 1px solid #DADADA
+                span
+                    &:last-child
+                        display: block !important
+
+        &-all
+            &-card
+                &__title
+                    font-size: 3em
+                &__list
+                    column-count: 4
+        &-list
+            a
+                flex: 25%
+                min-width: 25%
+        &-page
+            h1
+                padding: 0
+                margin-bottom: 0.5em
+            &-about
+                img
+                    max-width: 150px
+                    margin-left: 20px
+
+@media screen and ( max-width: 767.98px )
+    .brands
+        &-header
+            flex-wrap: wrap
+            h1
+                margin-bottom: .5em
+                flex: 0 0 100%
+        &-all
+            &-card
+                &__title
+                    font-size: 2.5em
+                &__list
+                    column-count: 3
+        &-list
+            &__img
+                min-height: 150px
+        &-page
+            margin-bottom: 0
+            h1
+                padding: 0
+            &-about
+                display: none
+    
+@media screen and ( max-width: 576.98px )
+    .brands
+        &-header
+            h1
+                font-size: 1.8em
+
+        &-alphabet
+            display: none
+            .rus,
+            .eng
+                font-size: 1.5em
+                span
+                    margin-right: 1em
+                    margin-bottom: 1em
+                    &:last-child
+                        flex: 0 0 15%
+        &-all
+            &-card
+                &__title
+                    flex: 1 0 30%
+                    font-size: 2em
+                &__list
+                    flex: 1 0 70%
+                    column-count: 2
+        &-list
+            a
+                flex: 33.333333%
+                min-width: 33.333333%
+        &-page
+            &-about
+                p
+                    font-size: 1em
+                img
+                    max-width: 100px
+                    margin-left: 20px
+                    margin-bottom: 10px
+    

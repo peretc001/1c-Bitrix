@@ -1,0 +1,135 @@
+.notes
+    position: relative
+    &-item
+        flex: 0 0 33.333333%
+        max-width: 33.333333%
+        padding-right: 1em
+        padding-left: 1em
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        margin-bottom: 1em
+        &__img
+            display: block
+            text-align: center
+            margin-bottom: 2em
+            overflow: hidden
+            border-radius: 10px
+        &__title
+            overflow: hidden
+            display: block
+            min-height: 65px
+            margin-bottom: 2em
+            a
+                color: $text
+                font-size: 2em
+                font-weight: bold
+        &__desc
+            display: block
+            line-height: 1.7
+            text-align: justify
+            text-align-last: left
+            a
+                color: $text
+
+    .slick-slide
+        outline: none
+    .slick-next,
+    .slick-prev
+        position: absolute
+        top: -55px
+        transform: translateY(-50%)
+        background: #fff
+        z-index: 1
+        background-repeat: no-repeat
+        background-size: 12px
+        border-radius: 50%
+        font-size: 0
+        width: 36px
+        height: 36px
+        padding: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        outline: none
+        border: none
+        cursor: pointer
+        transition: opacity .3s ease
+        &.slick-disabled
+            opacity: 0.5
+    .slick-next
+        right: 0
+        background-position: 55%
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+    .slick-prev
+        right: 45px
+        background-position: 45%
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5MiA0OTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MiA0OTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk4LjYwOCwyNDYuMTA0TDM4Mi42NjQsNjIuMDRjNS4wNjgtNS4wNTYsNy44NTYtMTEuODE2LDcuODU2LTE5LjAyNGMwLTcuMjEyLTIuNzg4LTEzLjk2OC03Ljg1Ni0xOS4wMzJsLTE2LjEyOC0xNi4xMiAgICBDMzYxLjQ3NiwyLjc5MiwzNTQuNzEyLDAsMzQ3LjUwNCwwcy0xMy45NjQsMi43OTItMTkuMDI4LDcuODY0TDEwOS4zMjgsMjI3LjAwOGMtNS4wODQsNS4wOC03Ljg2OCwxMS44NjgtNy44NDgsMTkuMDg0ICAgIGMtMC4wMiw3LjI0OCwyLjc2LDE0LjAyOCw3Ljg0OCwxOS4xMTJsMjE4Ljk0NCwyMTguOTMyYzUuMDY0LDUuMDcyLDExLjgyLDcuODY0LDE5LjAzMiw3Ljg2NGM3LjIwOCwwLDEzLjk2NC0yLjc5MiwxOS4wMzItNy44NjQgICAgbDE2LjEyNC0xNi4xMmMxMC40OTItMTAuNDkyLDEwLjQ5Mi0yNy41NzIsMC0zOC4wNkwxOTguNjA4LDI0Ni4xMDR6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiM0NzQ3NDciIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48L2c+IDwvc3ZnPg==')
+
+@media screen and ( max-width: 1199.98px )
+    .notes
+        &-item
+            &__img
+                margin-bottom: 30px
+            &__title
+                min-height: 50px
+                a
+                    font-size: 1.5em
+
+@media screen and ( max-width: 991.98px )
+    .notes
+        .row
+            overflow-x: scroll
+            flex-wrap: nowrap
+            &::-webkit-scrollbar
+                display: none
+            &::-webkit-scrollbar-track
+                display: none
+            &::-webkit-scrollbar-thumb
+                display: none
+        &-item
+            min-width: 350px
+            &__img
+                margin-bottom: 30px
+            &__title
+                min-height: 50px
+                margin-bottom: 20px
+                a
+                    font-size: 1.5em
+
+@media screen and ( max-width: 767.98px )
+    .notes
+        .row
+            padding: 0
+            margin: 0
+            overflow-x: visible
+            flex-wrap: wrap
+        &-item
+            flex: 100%
+            max-width: 100%
+            min-width: auto
+            padding: 0
+            margin: 0
+            &__img
+                img
+                    width: 100%
+
+        .slick-slide
+            margin: 0 1em
+            outline: none
+            
+        .slick-list
+            margin: 0 -1em
+
+@media screen and ( max-width: 374.98px )
+    .notes
+        &-item
+            &__title
+                min-height: 40px
+                margin-bottom: 20px
+                a
+                    font-size: 1.3em
+
+        .slick-next,
+        .slick-prev
+            display: none !important

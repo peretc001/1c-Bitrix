@@ -1,0 +1,213 @@
+@import '../_libs/var'
+.category
+    h1
+        display: block
+        font-size: 2.5em
+        font-weight: bold
+        margin: 0
+        margin-bottom: 1em
+    .row
+        [class*="col-"]
+            margin-bottom: 2em
+            &:nth-child(odd)
+                padding-right: 0.5em
+            &:nth-child(even)
+                padding-left: 0.5em
+                
+                
+    &-card
+        display: flex
+        background: #ffffff
+        border-radius: 20px
+        &__img
+            flex: 1 0 55%
+            overflow: hidden
+            border-radius: 20px 0 0 20px
+            img
+                width: 100%
+                transition: transform .5s ease
+        &__text
+            flex: 1 0 45%
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            padding: 30px 10px 30px 30px
+            a
+                color: $text
+                &:hover
+                    color: $accent
+            p
+                b
+                    display: block
+                    font-size: 1.2em
+                    margin-bottom: 1.5em
+            ul
+                width: 100%
+                margin: 0
+                padding: 0
+                max-height: 210px
+                overflow: auto
+                &::-webkit-scrollbar
+                    width: 3px
+                    height: 3px
+                &::-webkit-scrollbar-track
+                    background-color: #F6F6F5
+                    border-radius: 5px
+                &::-webkit-scrollbar-thumb
+                    background-color: $accent
+                    border-radius: 5px
+                li
+                    list-style: none
+                    padding: 0
+                    margin: 0
+                    a
+                        display: block
+                        line-height: 1.5
+                        margin-bottom: 0.5em
+            .more
+                display: inline-block
+                justify-content: flex-start
+                color: #B8B8B8
+                font-size: 0.8em
+                position: relative
+                padding-right: 1.2em
+                margin-top: auto
+                &::after
+                    content: ''
+                    position: absolute
+                    right: 0
+                    top: 59%
+                    transform: translateY(-50%)
+                    width: .7em
+                    height: .7em
+                    background-size: cover
+                    background-position: right center
+                    background-repeat: no-repeat
+                    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzRDNEM0IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                    transition: transform .5s ease
+                &:hover
+                    color: #B8B8B8
+                    &::after
+                        transform: translateY(-50%) translateX(5px)
+
+@media screen and ( max-width: 1199.98px )
+    .category
+        &-card
+            &__img
+                flex: 1 0 55%
+                border-radius: 20px 0 0 20px
+                img
+                    height: 100%
+            &__text
+                padding: 20px
+                p
+                    b
+                        margin-bottom: .5em
+                ul
+                    max-height: 150px
+                    li
+                        a
+                            font-size: 0.9em
+
+@media screen and ( max-width: 991.98px )
+    .category
+        &-card
+            flex-direction: column
+            &__img
+                flex: 1 0 100%
+                max-height: 200px
+                overflow: hidden
+                margin-bottom: 0.5em
+                border-radius: 20px 20px 0 0
+                img
+                    height: auto
+            &__text
+                flex: 1 0 100%
+                padding: 20px 40px
+                min-height: 280px
+                p
+                    b
+                        margin-bottom: .5em
+                ul
+                    max-height: 180px
+                    li
+                        a
+                            font-size: 1em
+
+@media screen and ( max-width: 767.98px )
+    .category
+        .row
+            [class*="col-"]
+                &:nth-child(odd)
+                    padding-right: 1em
+                &:nth-child(even)
+                    padding-left: 1em
+                
+        &-card
+            flex-direction: row
+            &__img
+                flex: 1 0 55%
+                max-height: 100%
+                margin-bottom: 0
+                border-radius: 20px 0 0 20px
+            &__text
+                flex: 1 0 45%
+                padding: 20px
+                p
+                    b
+                        margin-bottom: .5em
+                ul
+                    li
+                        a
+                            font-size: 0.9em
+
+@media screen and ( max-width: 576.98px )
+    .category
+        h1
+            font-size: 1.8em
+        &-card
+            flex-direction: column
+            overflow: hidden
+            &__img
+                flex: 0 0 100%
+                display: none
+            &__text
+                flex: 0 0 100%
+                padding: 20px
+                min-height: 100%
+                position: relative
+                p
+                    b
+                        font-size: 1.6em
+                        margin-bottom: .5em
+                ul
+                    display: flex
+                    flex-wrap: wrap
+                    width: 100%
+                    margin-bottom: 1em
+                    max-height: 100%
+                    overflow: visible
+                    position: relative
+                    &::-webkit-scrollbar,
+                    &::-webkit-scrollbar-track,
+                    &::-webkit-scrollbar-thumb
+                        width: 0
+                        height: 0
+                        opacity: 0
+                    li
+                        flex: 0 0 auto
+                        a
+                            display: block
+                            background: #ffffff
+                            color: $accent
+                            border: 2px solid $accent
+                            border-radius: 4px
+                            padding: .5em
+                            font-size: .9em
+                            margin-bottom: 1em
+                    li:not(:last-child)
+                        margin-right: 3%
+                    
+
+
+    

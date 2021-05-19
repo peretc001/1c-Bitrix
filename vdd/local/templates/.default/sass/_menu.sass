@@ -1,0 +1,652 @@
+.nav
+    &-catalog
+        width: 100%
+        position: relative
+        z-index: 5
+
+        &__menu
+            background-color: $accent
+            padding-right: calc(50% - 580px)
+            padding-left: calc(50% - 580px)
+            position: relative
+            z-index: 6
+            display: flex
+            align-items: center
+            justify-content: space-between
+            margin: 0
+            &:hover
+                li
+                    a
+                        opacity: .5
+
+            li
+                margin: 0
+                padding: 0
+                list-style: none
+                user-select: none
+                position: relative
+                text-align: center
+                padding: 1em 0
+                &:hover
+                    a
+                        opacity: 1
+
+                &.catalog
+                    display: none
+                a
+                    position: relative
+                    display: inline-block
+                    font-size: 1em
+                    margin: 0
+                    padding: .3em 0
+                    color: #ffffff
+                    cursor: pointer
+                    user-select: none
+                    transition-delay: 1s
+                    transition: opacity .3s ease
+                .catalog
+                    //padding: 1em
+                    position: relative
+                    padding-left: 38px
+                    .icon
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: flex
+                        align-content: center
+                        justify-content: center
+                        flex-wrap: wrap
+                        width: 24px
+                        height: 24px
+                        span
+                            display: inline-block
+                            width: 11px
+                            height: 11px
+                            background: $yellow
+                            border-radius: 2px
+                            &:nth-child(1),
+                            &:nth-child(2)
+                                margin-bottom: 2px
+                            &:nth-child(1),
+                            &:nth-child(3)
+                                margin-right: 2px
+                            &:nth-child(4)
+                                transition: transform .3s ease
+                                transform: rotate(0)
+                    &.active
+                        .icon
+                            span
+                                &:nth-child(4)
+                                    transform: rotate(45deg)
+                .discount,
+                .sale,
+                .heroes,
+                .brands
+                    padding-left: 38px
+                    &:before
+                        content: ''
+                        position: absolute
+                        left: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 24px
+                        height: 24px
+                        background-size: 100%
+                        background-repeat: no-repeat
+                        background-position: center
+                .discount
+                    &:before
+                        background-image: url('../img/nav/discount.svg')
+                .sale
+                    &:before
+                        background-image: url('../img/nav/sale.svg')
+                .heroes
+                    &:before
+                        background-image: url('../img/nav/heroes.svg')
+                .brands
+                    &:before
+                        background-image: url('../img/nav/brands.svg')
+
+        &__submenu
+            position: absolute
+            left: 0
+            bottom: 0
+            transform: translateY(100%)
+            width: 100%
+            min-height: 100vh
+            background: #ffffff
+            padding: 0 calc(50% - 595px)
+            padding-bottom: 0
+            display: none
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            z-index: 3
+            &.fade
+                position: absolute
+                display: flex
+                opacity: 0
+                transition: opacity .3s ease, transform .1s ease
+            &.active
+                opacity: 1
+                pointer-events: all
+                transform: translateY(100%)
+
+        &__general
+            padding: 0
+            margin: 0
+            background: $accent
+            border-radius: 0 0 10px 10px
+            padding: 0 1em
+            padding-bottom: .5em
+            flex: 0 0 25%
+            .head
+                display: none
+            ul
+                margin: 0
+                padding: 0
+            li
+                position: relative
+                margin: 0
+                padding: 0
+                list-style: none
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+                &:hover
+                    opacity: 1
+                &:last-child
+                    border: none
+                &.active
+                    opacity: 1
+                img
+                    display: inline-block
+                    text-align: center
+                    width: 24px
+                    max-height: 24px
+                    margin-right: 1em
+
+                a
+                    color: #ffffff
+                    display: block
+                    padding: 1em 0
+                    opacity: .7
+                    position: relative
+                    cursor: pointer
+                    transition: opacity .2s ease
+                    &.active,
+                    &:hover
+                        opacity: 1
+                        color: #ffffff
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: -1em
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 2em
+                        height: 2em
+                        padding: 0
+                        margin: 0
+                        background-size: 90%
+                        background-position: center
+                        background-repeat: no-repeat
+                    &::after
+                        content: ''
+                        position: absolute
+                        right: 0
+                        top: 50%
+                        transform: translateY(-50%)
+                        display: inline-block
+                        width: 1em
+                        height: 1em
+                        padding: 0
+                        margin: 0
+                        background-size: 100%
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+
+        &__parent
+            display: none
+            align-items: flex-start
+            justify-content: flex-start
+            flex-wrap: wrap
+            flex: 0 0 75%
+            opacity: 0
+            padding: 1em 1em 2em 1em
+            transition: opacity .2s ease-in-out
+            &.fade
+                display: flex
+            &.active
+                opacity: 1
+            &__head
+                flex: 1 1 100%
+                padding-left: 2em
+                display: flex
+                justify-content: space-between
+                p
+                    font-weight: bold
+                    font-size: 2em
+                    margin-bottom: 1em
+                    color: $text
+                span
+                    font-size: 2em
+                    color: $accent2
+                    text-align: right
+                    font-weight: bold
+
+            ul
+                flex: 0 0 33.333333%
+                margin: 0
+                padding: 0 0 0 2em
+                margin-bottom: 2em
+                li
+                    list-style: none
+                    padding: .3em 0
+                    margin: 0
+                    a
+                        color: #7F7D7D
+                        text-decoration: none
+                        font-weight: 200
+                        &:hover
+                            color: $accent
+                    &:first-child
+                        margin-bottom: 1em
+                        a
+                            font-weight: bold
+                            font-size: 1.2em
+                            color: $text
+                    .more
+                        display: inline-block
+                        margin-top: 1em
+                        padding-right: .8em
+                        position: relative
+                        &::after
+                           content: ''
+                           position: absolute
+                           right: 0
+                           top: 55%
+                           transform: translateY(-50%)
+                           display: inline-block
+                           width: .5em
+                           height: .5em
+                           background-size: cover
+                           background-position: cenetr
+                           background-repeat: no-repeat
+                           background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                           transition: transform .5s ease
+                        &:hover
+                            color: $text
+                            &::after
+                                transform: translateY(-50%) translateX(5px)
+                    &.cut
+                        a
+                            &:last-child
+                                display: none
+                    &.hidden
+                        display: none
+
+        .layout
+            position: fixed
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            background: transparent
+            opacity: 1
+            z-index: 1
+
+.openSearch
+    display: none
+
+@media screen and ( max-width: 1199.98px )
+    .nav
+        &-catalog
+            &__menu
+                padding-right: calc(50% - 465px)
+                padding-left: calc(50% - 465px)
+                li
+                    &::before
+                        content: ''
+                        position: absolute
+                        right: -20px
+            &__submenu
+                padding: 0 calc(50% - 480px)
+            &__general
+                flex: 0 0 30%
+            &__parent
+                flex: 0 0 70%
+
+@media screen and ( max-width: 991.98px )
+    .nav
+        &-catalog
+            display: table
+            &__menu
+                width: 300px
+                padding: 0
+                position: absolute
+                top: 3px
+                right: calc(50% - 345px)
+                transform: translateY(20px)
+                z-index: -1
+                opacity: 0
+                pointer-events: none
+                border: 2px solid $accent
+                border-radius: 4px
+                overflow: hidden
+                justify-content: flex-start
+                flex-wrap: wrap
+                li
+                    flex: 0 0 100%
+                    text-align: left
+                    padding: 0
+                    margin: 0
+                    background: #ffffff
+                    border-bottom: 1px solid lighten($accent, 10%)
+                    position: relative
+                    &::before
+                        display: none
+                    &:first-child
+                        display: none
+                    &:last-child
+                        border-bottom: none
+                    &.catalog
+                        display: block
+                        background: $accent
+                        a
+                            color: #ffffff
+                            &:hover
+                                color: #ffffff
+                            img
+                                display: inline-block
+                                width: 24px
+                                height: 24px
+                                text-align: center
+                                margin-right: .95em
+                    &:not(.catalog)
+                        a
+                            &::after
+                                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzI1MUMwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+
+                    a
+                        display: block
+                        font-size: 1em
+                        font-weight: bold
+                        padding: 1em 0
+                        margin: 0 1.5em
+                        color: $accent
+                        opacity: 1 !important
+                        &:hover
+                            color: $accent
+                        &::after
+                            content: ''
+                            position: absolute
+                            left: auto
+                            right: 0
+                            top: 50%
+                            transform: translateY(-50%)
+                            display: inline-block
+                            width: 1em
+                            height: 1em
+                            padding: 0
+                            margin: 0
+                            background-color: transparent
+                            background-size: 100%
+                            background-position: center
+                            background-repeat: no-repeat
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojRkZGRkZGIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        &.link
+                            &::after
+                                display: none
+
+                    &.top
+                        background: #fff
+                        &::after
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojQzI1MUMwIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        a
+                            color: $accent
+                            font-weight: bold
+                &.fade
+                    display: flex
+                    z-index: 3
+                    transition: transform .3s ease, opacity .3s ease
+                &.active
+                    opacity: 1
+                    pointer-events: all
+                    transform: translateY(0)
+            
+            &__submenu
+                width: 300px
+                height: 100%
+                min-height: 100%
+                border-radius: 4px
+                background: transparent
+                border: 2px solid $accent
+                display: none
+                z-index: -1
+                opacity: 0
+                pointer-events: none
+                position: absolute
+                left: auto
+                padding: 0
+                right: calc(50% - 345px)
+                transform: translateX(10%) translateY(100%)
+                flex-wrap: wrap
+                overflow: hidden
+
+
+
+                &.child
+                    .nav-catalog__general
+                        display: none
+                        border: none
+                    .nav-catalog__parent
+                        ul
+                            li
+                                &.cut,
+                                &.hidden
+                                    display: none
+                &.sub
+                    .nav-catalog__general
+                        display: none
+                        border: none
+                    .nav-catalog__parent
+                        ul
+                            display: none
+                            li
+                                &:first-child
+                                    display: none
+                                &:not(:first-child)
+                                    display: block
+                        
+                                .more
+                                    display: none
+                        ul.current
+                            display: block
+                            li
+                                a
+                                    color: $text
+                                    &::after
+                                        display: none
+
+
+                &.fade
+                    transition: transform .2s ease, opacity .2s ease
+                    border: none
+                    overflow: visible
+                &.active
+                    display: flex
+                    z-index: 3
+                    opacity: 1
+                    pointer-events: all
+                    transform: translateX(0) translateY(100%)
+
+            
+            &__general
+                flex: 0 0 100%
+                border-radius: 4px
+                transition: transform .3s ease
+                .head
+                    padding: 0
+                    margin: 0
+                    display: block
+                    .back
+                        display: block
+                        margin: 0
+                        font-size: 1em
+                        padding: 1em
+                        padding-left: 2em
+                        background: $accent
+                        color: #ffffff
+                        cursor: pointer
+                        position: relative
+                        &::before
+                            content: ''
+                            position: absolute
+                            left: .5em
+                            top: 50%
+                            transform: translateY(-50%)
+                            width: 1em
+                            height: 1em
+                            background-size: cover
+                            background-position: center
+                            background-repeat: no-repeat
+                            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQwLjgyMyAyNDAuODIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDAuODIzIDI0MC44MjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBpZD0iQ2hldnJvbl9SaWdodCIgZD0iTTU3LjYzMywxMjkuMDA3TDE2NS45MywyMzcuMjY4YzQuNzUyLDQuNzQsMTIuNDUxLDQuNzQsMTcuMjE1LDBjNC43NTItNC43NCw0Ljc1Mi0xMi40MzksMC0xNy4xNzkgICBsLTk5LjcwNy05OS42NzFsOTkuNjk1LTk5LjY3MWM0Ljc1Mi00Ljc0LDQuNzUyLTEyLjQzOSwwLTE3LjE5MWMtNC43NTItNC43NC0xMi40NjMtNC43NC0xNy4yMTUsMEw1Ny42MjEsMTExLjgxNiAgIEM1Mi45NDIsMTE2LjUwNyw1Mi45NDIsMTI0LjMyNyw1Ny42MzMsMTI5LjAwN3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+
+                ul
+                    display: block
+                    transition: transform .3s ease
+                    li
+                        display: block
+                        a
+                            opacity: 1
+            
+            &__parent
+                flex: 0 0 100%
+                opacity: 0
+                z-index: -1
+                pointer-events: none
+                transform: translateX(10%)
+                &.fade
+                    transition: transform .2s ease, opacity .2s ease
+                &.active
+                    display: flex
+                    opacity: 1
+                    z-index: 3
+                    pointer-events: all
+                    transform: translateX(0)
+                    background: #fff
+                    padding: 0
+                    margin: 0
+                    width: 100%
+                    height: auto
+                    overflow: hidden
+                    border: 2px solid $accent
+                    border-radius: 4px
+                &__head
+                    padding: 0
+                    margin: 0
+                    flex-wrap: wrap
+
+                .back
+                    flex: 0 0 100%
+                    margin: 0
+                    font-size: 1em
+                    padding: 1em
+                    padding-left: 2em
+                    background: $accent
+                    color: #ffffff
+                    cursor: pointer
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        left: .5em
+                        top: 50%
+                        transform: translateY(-50%)
+                        width: 1em
+                        height: 1em
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
+                        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjQwLjgyMyAyNDAuODIzIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDAuODIzIDI0MC44MjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PGc+Cgk8cGF0aCBpZD0iQ2hldnJvbl9SaWdodCIgZD0iTTU3LjYzMywxMjkuMDA3TDE2NS45MywyMzcuMjY4YzQuNzUyLDQuNzQsMTIuNDUxLDQuNzQsMTcuMjE1LDBjNC43NTItNC43NCw0Ljc1Mi0xMi40MzksMC0xNy4xNzkgICBsLTk5LjcwNy05OS42NzFsOTkuNjk1LTk5LjY3MWM0Ljc1Mi00Ljc0LDQuNzUyLTEyLjQzOSwwLTE3LjE5MWMtNC43NTItNC43NC0xMi40NjMtNC43NC0xNy4yMTUsMEw1Ny42MjEsMTExLjgxNiAgIEM1Mi45NDIsMTE2LjUwNyw1Mi45NDIsMTI0LjMyNyw1Ny42MzMsMTI5LjAwN3oiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPjwvZz4gPC9zdmc+')
+                .category
+                    flex: 0 0 100%
+                    display: block
+                    margin: 0
+                    padding: 1em
+                    padding-left: 2em
+                    font-size: 1em
+                    color: $accent
+                    border-bottom: 1px solid #ebebeb
+                    &:hover
+                        color: $accent
+
+                ul
+                    flex: 0 0 100%
+                    padding: 0
+                    margin: 0
+                    li
+                        padding: 0
+                        margin: 0 !important
+                        display: block
+                        border-bottom: 1px solid #ebebeb
+                        a
+                            display: block
+                            margin: 0
+                            font-weight: normal !important
+                            font-size: 1em !important
+                            padding: 1em 0
+                            padding-left: 2em
+                            max-width: 100%
+                            position: relative
+                            &::after
+                                content: ''
+                                position: absolute
+                                left: auto
+                                right: 1em
+                                top: 50%
+                                transform: translateY(-50%)
+                                display: inline-block
+                                width: 1em
+                                height: 1em
+                                padding: 0
+                                margin: 0
+                                background-color: transparent
+                                background-size: 100%
+                                background-position: center
+                                background-repeat: no-repeat
+                                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ5Mi4wMDQgNDkyLjAwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDkyLjAwNCA0OTIuMDA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTM4Mi42NzgsMjI2LjgwNEwxNjMuNzMsNy44NkMxNTguNjY2LDIuNzkyLDE1MS45MDYsMCwxNDQuNjk4LDBzLTEzLjk2OCwyLjc5Mi0xOS4wMzIsNy44NmwtMTYuMTI0LDE2LjEyICAgIGMtMTAuNDkyLDEwLjUwNC0xMC40OTIsMjcuNTc2LDAsMzguMDY0TDI5My4zOTgsMjQ1LjlsLTE4NC4wNiwxODQuMDZjLTUuMDY0LDUuMDY4LTcuODYsMTEuODI0LTcuODYsMTkuMDI4ICAgIGMwLDcuMjEyLDIuNzk2LDEzLjk2OCw3Ljg2LDE5LjA0bDE2LjEyNCwxNi4xMTZjNS4wNjgsNS4wNjgsMTEuODI0LDcuODYsMTkuMDMyLDcuODZzMTMuOTY4LTIuNzkyLDE5LjAzMi03Ljg2TDM4Mi42NzgsMjY1ICAgIGM1LjA3Ni01LjA4NCw3Ljg2NC0xMS44NzIsNy44NDgtMTkuMDg4QzM5MC41NDIsMjM4LjY2OCwzODcuNzU0LDIzMS44ODQsMzgyLjY3OCwyMjYuODA0eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+                        &:not(:first-child)
+                            display: none
+                        
+                        &.cut
+                            a
+                                &:first-child
+                                    display: none
+                                &:last-child
+                                    display: block
+                        &.hidden
+                            display: block
+ 
+@media screen and ( max-width: 767.98px )
+    .nav
+        &-catalog
+            &__menu,
+            &__submenu
+                right: calc(50% - 255px)
+
+@media screen and ( max-width: 576.98px )
+    .nav
+        &-catalog
+            &__menu,
+            &__submenu
+                width: auto
+                left: 1em
+                right: 1em
+                padding: 0 !important
+            &__general,
+            &__parent
+                left: 0

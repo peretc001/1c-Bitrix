@@ -1,0 +1,117 @@
+.text-block {
+    padding: 0;
+
+    .section__title {
+        padding: 10px 0 30px 0;
+    }
+
+    p {
+        color: $text;
+        font-size: 1em;
+        line-height: 2;
+        text-align: justify;
+        text-align-last: left;
+    }
+    
+    .column {
+        columns: 2;
+        gap: 30px;
+    }
+
+    @media screen and ( max-width: 767.98px ) {
+        padding: 40px 0 0px 0;
+
+        .section__title {
+            padding: 10px 0 10px 0;
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        .column {
+            columns: 1;
+        }
+
+        .showElem {
+            padding: 0;
+            padding-bottom: 1em;
+            max-height: 2500px;
+            opacity: 1;
+            overflow: hidden;
+            transition: max-height .5s ease;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100px;
+                background-size: 100%;
+                background-position: center;
+                background-repeat: repeat-x;
+                background: url('/local/templates/.default/img/gradient.svg');
+                z-index: 1;
+                opacity: 0;
+                transition: opacity .5s ease, padding .5s ease;
+            }
+
+            &.active {
+                padding: 0;
+                padding-bottom: 0;
+                opacity: 1;
+                max-height: 100px;
+
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .hideElem {
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%) rotate(180deg);
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                background-size: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMTEgNTEyLjAxMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAxMSA1MTIuMDExOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNS43NTUsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwTDI1Ni4wMDUsMzQzLjE3NkwzNi40MjEsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwICAgIHMtOC4zNDEsMjEuODI0LDAsMzAuMTY1bDIzNC42NjcsMjM0LjY2N2M0LjE2LDQuMTYsOS42MjEsNi4yNTEsMTUuMDgzLDYuMjUxYzUuNDYyLDAsMTAuOTIzLTIuMDkxLDE1LjA4My02LjI1MWwyMzQuNjY3LTIzNC42NjcgICAgQzUxNC4wOTYsMTQ1LjQxNiw1MTQuMDk2LDEzMS45MzMsNTA1Ljc1NSwxMjMuNTkyeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojNDc0NzQ3IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=');
+                z-index: 2;
+                transition: transform .3s ease;
+            }
+
+            &.active {
+                &:after {
+                    transform: translateX(-50%) rotate(0);
+                }
+            }
+        }
+
+        p {
+            &:last-child {
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+
+    @media screen and ( max-width: 576.98px ) {
+        text-align: center;
+
+        .section__title {
+            h2 {
+                text-align: center;
+                }
+            }
+        }
+
+}

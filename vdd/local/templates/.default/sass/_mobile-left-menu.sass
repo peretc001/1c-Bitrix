@@ -1,0 +1,169 @@
+.mobile-left-menu
+  display: none
+  position: absolute
+  left: 0
+  top: 0
+  bottom: 0
+  transform: translateX(-100%)
+  padding: 30px 12px 30px 12px
+  max-width: 320px
+  background: $bg
+  transition: transform .3s ease-in-out
+  .close
+    display: none
+  .button
+    display: flex
+    align-items: center
+    border-radius: 4px
+    margin-bottom: .5em
+    padding: 10px 10px 10px 25px
+    font-weight: bold
+    font-size: 1.3em
+    img
+      display: inline-block
+      width: 28px
+      max-height: 25px
+      margin-right: 15px
+    &.login,
+    &.lk
+      background: $yellow
+      &.hidden
+        display: none
+    &.city,
+    &.phone
+      background: #CCF0F4
+  p
+    margin: 0
+    padding: 0
+    b
+      font-size: 1.4em
+      border-bottom: none
+
+  a
+    color: $text
+
+  .menu-item
+    padding: 1em 0
+    margin: 0 2em
+    border-bottom: 1px solid rgba(0, 182, 198, 0.2)
+    p
+      padding: 0
+    ul
+      opacity: 0
+      overflow: hidden
+      max-height: 0
+      margin: 0
+      padding: 0
+      transition: max-height .5s ease, opacity .5s ease
+      li
+        list-style: none
+        margin: 1em 0
+        padding: 0
+        padding-left: 1em
+      &.active
+        opacity: 1
+        overflow: visible
+        max-height: 500px
+    .hideElem
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        right: 1em
+        top: 50%
+        transform: translateY(-50%)
+        display: inline-block
+        width: 1em
+        height: 1em
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUxMi4wMTEgNTEyLjAxMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyLjAxMSA1MTIuMDExOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiPjxnPjxnPgoJPGc+CgkJPHBhdGggZD0iTTUwNS43NTUsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwTDI1Ni4wMDUsMzQzLjE3NkwzNi40MjEsMTIzLjU5MmMtOC4zNDEtOC4zNDEtMjEuODI0LTguMzQxLTMwLjE2NSwwICAgIHMtOC4zNDEsMjEuODI0LDAsMzAuMTY1bDIzNC42NjcsMjM0LjY2N2M0LjE2LDQuMTYsOS42MjEsNi4yNTEsMTUuMDgzLDYuMjUxYzUuNDYyLDAsMTAuOTIzLTIuMDkxLDE1LjA4My02LjI1MWwyMzQuNjY3LTIzNC42NjcgICAgQzUxNC4wOTYsMTQ1LjQxNiw1MTQuMDk2LDEzMS45MzMsNTA1Ljc1NSwxMjMuNTkyeiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCIgc3R5bGU9ImZpbGw6I0MyNTFDMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=')
+        transition: transform .3s ease
+      &.active
+        &::before
+          transform: translateY(-50%) rotate(180deg)
+  .social
+    padding: 1em 2em
+    &-link
+      margin-top: 1em
+      width: 100%
+      display: flex
+      align-items: center
+      a
+        background: #ffffff
+        border-radius: 50%
+        display: inline-block
+        width: 40px
+        height: 40px
+        display: flex
+        align-items: center
+        justify-content: center
+        &:not(:first-child)
+          margin-left: 8px
+        img
+          max-width: 90%
+          height: auto
+  .menu-email
+    padding: 1em
+    p
+      font-size: 0.9em
+    form
+      padding-top: 1em
+      input
+        width: 100%
+        border: 2px solid $yellow
+        border-radius: 6px
+        background: transparent
+        color: $text
+        font-size: 16px !important
+        padding: 10px
+        appearance: none
+        outline: none
+        box-shadow: none
+        &::-webkit-input-placeholder
+          color: #9BAFC0
+        &:-moz-placeholder
+          color: #9BAFC0
+        &::-moz-placeholder
+          color: #9BAFC0
+        &:-ms-input-placeholder
+          color: #9BAFC0
+      .btn
+        width: 100%
+        background: $yellow
+        font-size: 1em !important
+        padding: 1em
+        margin-top: 1em
+        margin-bottom: 2em
+        &:focus
+          border: 1px solid $yellow
+
+  &.fade
+    display: block
+  &.is-active
+    transform: translateX(0)
+
+main
+  transition: transform .3s ease-in-out, background .3s ease-in-out
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    display: block
+    width: 100%
+    height: 100%
+    background: #282C34
+    opacity: 0
+    z-index: -99
+    pointer-events: none
+    transition: opacity .3s ease
+
+  &.is-active
+    position: fixed
+    transform: translateX(320px)
+    &:after
+      z-index: 99
+      pointer-events: all
+      opacity: 1

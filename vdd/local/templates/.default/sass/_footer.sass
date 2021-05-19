@@ -1,0 +1,186 @@
+footer
+    clear: both
+
+    .email-form
+        padding: 4em 0
+        &-block
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &__title
+                display: flex
+                align-items: center
+                margin-right: 3em
+                img
+                    width: 114px
+                    height: auto
+                    margin-right: 2em
+                p
+                    font-size: 1.5em
+                    max-width: 280px
+                    margin-bottom: 0
+                    font-weight: bold
+            &__form
+                flex: 1 1 auto
+                display: flex
+                position: relative
+                .msg
+                    position: absolute
+                    left: 2em
+                    bottom: -2em
+                    font-weight: bold
+                    font-size: 1em
+                    &.error
+                        color: $red
+                    &.good
+                        color: $green
+                input
+                    flex: 0 0 484px
+                    border: 2px solid $yellow
+                    border-radius: 6px
+                    background: transparent
+                    color: $text
+                    font-size: 1em
+                    padding: 1em 2em
+                    appearance: none
+                    outline: none
+                    box-shadow: none
+                    margin-right: 2em
+                    &::-webkit-input-placeholder
+                        color: #9BAFC0
+                    &:-moz-placeholder
+                        color: #9BAFC0
+                    &::-moz-placeholder
+                        color: #9BAFC0
+                    &:-ms-input-placeholder
+                        color: #9BAFC0
+                .btn
+                    flex: 1 1 auto
+                    margin-right: 0
+                    &.btn-send
+                        padding: 0
+                        font-size: 1.1em
+
+    .row
+        margin: 0
+        [class*="col-"]
+            flex: 0 0 320px
+            max-width: 320px
+            padding: 0
+            &:last-child
+                flex: 0 0 200px
+                max-width: 200px
+            p
+                b
+                    font-size: 1em
+            ul
+                margin: 0
+                padding: 0
+                li
+                    list-style: none
+                    padding: 0.5em 0
+                    margin: 0
+                    a
+                        color: $text
+                        font-size: 1em
+                        &:hover
+                            color: $text
+    
+    .social
+        display: flex
+        a
+            background: #ffffff
+            border-radius: 50%
+            display: inline-block
+            width: 40px
+            height: 40px
+            display: flex
+            align-items: center
+            justify-content: center
+            &:not(:first-child)
+                margin-left: 8px
+            img
+                max-width: 90%
+                height: auto
+
+    .copyright
+        margin: 4em auto 0 auto
+        padding: 1.5em 0 1.5em 0
+        border-top: 1px solid #ebebeb
+        color: $text2
+        display: flex
+        align-items: center
+        justify-content: space-between
+        p
+            margin: 0
+        .policy
+            a
+                color: $text2
+                &:first-child
+                    margin-right: 2em
+        .created
+            a
+                color: #81BD59
+                font-weight: bold
+
+@media screen and ( max-width: 1199.98px )
+    footer
+        .email-form
+            &-block
+                &__title
+                    margin-right: 2em
+                    img
+                        width: 100px
+                    p
+                        font-size: 1.5em
+                &__form
+                    input
+                        flex: 0 0 60%
+        .row
+            [class*="col-"]
+                flex: 0 0 250px
+                max-width: 250px
+                &:last-child
+                    flex: 0 0 180px
+                    max-width: 180px
+        .copyright
+            font-size: .9em
+            .policy
+                a
+                    &:first-child
+                        margin-right: 1em
+
+@media screen and ( max-width: 991.98px )
+    footer
+        padding: 0
+        margin: 0
+        .email-form
+            display: none
+        .row
+            display: none
+        .copyright
+            font-size: 1em
+            border-top: none
+            margin: 15px auto 0 auto
+            .policy
+                display: none
+
+@media screen and ( max-width: 767.98px )
+    footer
+        .copyright
+            margin-top: 3em
+            padding: 0 0 20px 0
+            .policy
+                display: none
+
+@media screen and ( max-width: 576.98px )
+    footer
+        margin-top: 3em
+        .copyright
+            justify-content: center
+            flex-wrap: wrap
+            p
+                text-align: center
+                flex: 0 0 100%
+            .created
+                margin-top: 1em

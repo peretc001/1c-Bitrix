@@ -1,0 +1,88 @@
+.nav-search__form
+  margin: 0
+
+div.title-search-result
+  width: 100%
+  min-width: 370px
+  display: none
+  margin-top: 0
+  background-color: #FFF
+  border: 1px solid #f5f5f5
+  border-radius: 4px
+  overflow: hidden
+  z-index: 6
+
+/*========================*/
+.bx_searche
+  .bx_item_block--wrapper
+    display: flex
+    align-items: center
+    border-bottom: 1px solid #f5f5f5
+    padding: .5em 2em .5em 2em
+    color: #474747
+    transition: background .3s ease
+    &:hover
+      background: #f5f5f5
+    .category
+      color: #aaa
+      font-size: 10px
+    .bx_img_element
+      background: #fff
+      position: relative
+    .bx_item_block
+      position: relative
+    .bx_image
+      width: 45px
+      height: 45px
+      margin-right: 1em
+      background-size: contain
+      background-position: center
+      background-repeat: no-repeat
+    .bx_item_element
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex: 1 1 auto
+      p
+        margin-bottom: 0
+      hr
+        margin: 0
+        border: none
+        border-bottom: 1px solid #e5e5e5
+      a
+        display: block
+        color: #474747
+        font-size: 1em
+        text-decoration: none
+    .bx_price
+      font-weight: bold
+      font-size: 1em
+      .old
+        font-weight: normal
+        text-decoration: line-through
+        color: #FF5C57
+        margin-right: 1em
+
+    &.all_result
+      min-height: 0
+      .bx_item_block--wrapper
+        color: #a7a7a7
+        background: #f5f5f5
+        border-bottom: none
+
+      .all_result_title
+        a
+          color: #a7a7a7
+          &:hover
+            color: #a7a7a7
+.openSearch
+  .title-search-result
+    position: relative !important
+    bottom: auto !important
+    transform: translateY(0) !important
+    border: none !important
+    display: block !important
+  .bx_item_block--wrapper
+    padding: .8em 1em
+    span
+      display: inline-block

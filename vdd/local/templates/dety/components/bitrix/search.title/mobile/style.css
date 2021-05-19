@@ -1,0 +1,91 @@
+/*.nav-search__form {*/
+/*	margin: 0*/
+/*}*/
+
+/*div.title-search-result {*/
+/*	border:1px solid #f5f5f5;*/
+/*	display:none;*/
+/*	overflow:hidden;*/
+/*	z-index:999;*/
+/*	min-width: 310px;*/
+/*	width: 100%;*/
+/*	margin-top: 0;*/
+/*	background-color: #FFF;*/
+/*	border-radius: 4px;*/
+/*}*/
+
+/*!*========================*!*/
+/*.bx_searche{}*/
+/*.bx_searche .bx_item_block--wrapper {*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	border-bottom: 1px solid #f5f5f5;*/
+/*	padding: .5em 2em .5em 1em;*/
+/*	color: #474747;*/
+/*	transition: background .3s ease;*/
+/*}*/
+/*.bx_searche .bx_item_block--wrapper:hover {*/
+/*	background: #f5f5f5;*/
+/*}*/
+/*.bx_searche .bx_item_block--wrapper .category {*/
+/*	color: #aaa;*/
+/*	font-size: 10px;*/
+/*}*/
+/*.bx_searche .bx_img_element{*/
+/*	background: #fff;*/
+/*	position: relative;*/
+/*}*/
+/*.bx_searche .bx_item_block{*/
+/*	position: relative*/
+/*}*/
+/*.bx_searche .bx_image{*/
+/*	width: 45px;*/
+/*	height: 45px;*/
+/*	margin-right: 1em;*/
+/*	background-size: contain;*/
+/*	background-position: center;*/
+/*	background-repeat: no-repeat;*/
+/*}*/
+/*.bx_searche .bx_item_element{*/
+/*	display: flex;*/
+/*	align-items: center;*/
+/*	justify-content: space-between;*/
+/*	flex: 1 1 auto;*/
+/*}*/
+/*.bx_searche .bx_item_element p {*/
+/*	margin-bottom: 0;*/
+/*}*/
+/*.bx_searche .bx_item_element hr{*/
+/*	margin: 0;*/
+/*	border: none;*/
+/*	border-bottom: 1px solid #e5e5e5;*/
+/*}*/
+/*.bx_searche .bx_item_element a{*/
+/*	display: block;*/
+/*	color: #474747;*/
+/*	font-size: 1em;*/
+/*	text-decoration: none;*/
+/*}*/
+/*.bx_searche .bx_price{*/
+/*	font-weight:bold;*/
+/*	font-size:1em;*/
+/*}*/
+/*.bx_searche .bx_price .old{*/
+/*	font-weight:normal;*/
+/*	text-decoration: line-through;*/
+/*	color: #FF5C57;*/
+/*	margin-right: 1em;*/
+/*}*/
+/*.bx_item_block.all_result{min-height:0}*/
+/*.bx_item_block.others_result{*/
+
+/*}*/
+/*.bx_item_block.all_result .bx_item_block--wrapper{*/
+/*	color: #a7a7a7;*/
+/*	background: #f5f5f5;*/
+/*	border-bottom: none;*/
+/*}*/
+/*.bx_item_block.all_result .all_result_title a {color: #a7a7a7}*/
+/*.bx_item_block.all_result .all_result_title a:hover {color: #a7a7a7}*/
+
+

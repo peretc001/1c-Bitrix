@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет - Избранное</title>
+  <style>
+     body {opacity: 0; overflow-x: hidden; background: #FFF8F8;}
+  </style>
+
+<!-- Cart css -->
+  <link rel="stylesheet" href="./css/account/account.min.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-top">
+    <div class="container">
+      <div class="nav-top__city">
+        <a class="nav-top__city__location" data-toggle="modal" data-target="city" href="#">Санкт-Петербург</a>
+        <div class="nav-top__city__location__item">
+          <a href="#">Пункты выдачи</a>
+          <a href="">Условия доставки</a>
+        </div>
+      </div>
+      <div class="nav-top__right">
+        <a class="nav-top__right__phone" href="tel:8-800-600-77-27">8-800-600-77-27</a>
+        <span class="nav-top__right__time">(9:00 - 22:00)</span>
+        <div class="has-children">
+          <a class="nav-top__right__user">Покупателям</a>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+        </div>
+        <a class="nav-top__right__login" data-toggle="modal" data-target="login" href="#">Войти</a>
+        <a class="nav-top__right__lk" href="/">Гость</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-search">
+    <div class="container">
+      <div class="hamburger" data-toggle="modal" data-target="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <a href="./" class="brand"></a>
+      <form action="/" method="post" class="nav-search__form">
+        <input type="text" name="search" value="" placeholder="Поиск по сайту">
+      </form>
+      <div class="nav-search--right">
+        <a href="" class="nav-search--right__wishlist active">
+          <!-- <span>2</span> -->
+        </a>
+        <a href="" class="nav-search--right__cart">
+          <!-- <span class="qty">3</span>
+          <span class="price">5 750 ₽</span> -->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id=app></div>
+</nav>
+
+<main>
+    <div class="breadcrumb">
+        <div class="container">
+          <div class="links">
+            <a href="./">Главная</a>
+          </div>
+          <span>Личный кабинет</span>
+        </div>
+    </div>
+
+    <section class="account">
+        <div class="container">
+            <h1>Личный кабинет</h1>
+
+            <div class="row">
+              <div class="left">
+                <ul>
+                    <li><a href="./account.html">Мои данные</a></li>
+                    <li><a href="./account-orders.html">Мои заказы</a></li>
+                    <li><a href="./account-favorite.html" class="active">Избранное</a></li>
+                </ul>
+              </div>
+
+              <div class="right account-favorite">
+                <!-- Cards -->
+                <div class="row">
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                        <span class="top"></span>
+                        <span class="new"></span>
+                        <span class="sale"></span>
+                        <span class="bonus"></span>
+                        <span class="installments"></span>
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/1.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                          Боди Zara Моя Горошинка серое в полоску
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist active"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page2.html" class="products-card">
+                      <div class="products-card__head">
+                        <span class="bonus"></span>
+                        <span class="installments"></span>
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/2.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                          Сумочка LOL антистресс
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                        <span class="top"></span>
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/3.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                          Футболка Play Today жёлтая
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                      </div>
+                      <span class="products-card__img">
+                        <img class="lazy" data-src="./img/products/4.png" alt="">
+                      </span>
+                      <div class="products-card__title">
+                        Боди Zara Моя Горошинка серое в полоску Боди Zara Моя Горошинка серое в полоску
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                        <span class="top"></span>
+                        <span class="sale"></span>
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/5.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                        Боди Zara Моя Горошинка серое в полоску
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist active"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/6.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                          Сумочка LOL антистресс
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                        <span class="top"></span>
+                        <span class="bonus"></span>
+                      </div>
+                      <div class="products-card__img">
+                        <img class="lazy" data-src="./img/products/7.png" alt="">
+                      </div>
+                      <div class="products-card__title">
+                          Футболка Play Today жёлтая
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-6 col-lg-4">
+                    <a href="./products-page.html" class="products-card">
+                      <div class="products-card__head">
+                      </div>
+                      <span class="products-card__img">
+                        <img class="lazy" data-src="./img/products/8.png" alt="">
+                      </span>
+                      <div class="products-card__title">
+                        Боди Zara Моя Горошинка  серое в полоску Боди Zara Моя Горошинка Боди Zara Моя Горошинка Боди Zara Моя Горошинка
+                      </div>
+                      <div class="products-card__review">
+                        <div class="star">
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span class="active"></span>
+                          <span></span>
+                        </div>
+                        <span class="quote">18</span>
+                      </div>
+                      <div class="products-card__bottom">
+                        <div class="products-card__bottom__price">
+                          <span class="old">7 200 ₽</span>
+                          <span class="price">6 750 ₽</span>
+                        </div>
+                        <div class="products-card__bottom__buy">
+                          <span class="wishlist"></span>
+                          <span class="cart"></span>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <!-- End Cards -->
+              </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="visited">
+      <div class="container">
+  
+        <h4>Ранее вы смотрели</h4>
+  
+        <div class="visited-products">
+          <div class="visited-products--item">
+            <a href="./products-page.html" class="products-card">
+              <div class="products-card__head">
+                <span class="top"></span>
+                <span class="new"></span>
+                <span class="sale"></span>
+                <span class="bonus"></span>
+                <span class="installments"></span>
+                <span class="gift">
+                  <svg viewBox="0 0 34 34" fill="none" width="28" height="45" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M31.156 14.1218H2.84542C2.54885 14.1218 2.30859 14.3622 2.30859 14.6586V31.3155C2.30859 31.612 2.54885 31.8523 2.84542 31.8523H31.1561C31.4526 31.8523 31.6929 31.6119 31.6929 31.3155V14.6587C31.6928 14.3621 31.4525 14.1218 31.156 14.1218Z" fill="#C251C0"/>
+                    <path d="M19.7445 14.1218H14.2595C13.9629 14.1218 13.7227 14.3622 13.7227 14.6587V31.3155C13.7227 31.612 13.9629 31.8524 14.2595 31.8524H19.7445C20.041 31.8524 20.2813 31.612 20.2813 31.3155V14.6587C20.2813 14.3621 20.0409 14.1218 19.7445 14.1218Z" fill="#FFC100"/>
+                    <g class="cap">
+                      <path d="M30.1088 4.20481C29.5824 2.83279 28.7518 1.49278 27.887 0.620132C27.5697 0.299988 27.1423 0.137691 26.6559 0.148116C25.0441 0.185636 22.4176 2.20857 18.8494 6.16067C18.7603 6.25928 18.7109 6.38752 18.7109 6.52046V9.36006C18.7109 9.65656 18.9512 9.89689 19.2478 9.89689H27.5056C29.3456 9.89689 30.105 9.00173 30.418 8.25074C30.8355 7.24967 30.7256 5.8127 30.1088 4.20481Z" fill="#FFC100"/>
+                      <path d="M30.4167 5.14021C30.4017 5.08509 30.378 5.03269 30.3465 4.98508C29.5358 3.75942 27.7842 4.21802 26.4576 4.81853C22.6035 6.56316 21.0119 8.96633 20.946 9.06774C20.8388 9.23289 20.8305 9.44333 20.9245 9.61632C21.0184 9.78931 21.1994 9.89695 21.3962 9.89695H27.5064C28.6772 9.89695 29.5455 9.53756 30.0871 8.82881C30.7305 7.98678 30.8444 6.71124 30.4167 5.14021Z" fill="#FF5C57"/>
+                      <path d="M15.1498 6.16074C11.5816 2.20864 8.95509 0.185703 7.34328 0.148183C6.85559 0.137691 6.42946 0.300054 6.11217 0.620199C5.24743 1.49278 4.41682 2.83286 3.89048 4.20487C3.27364 5.81277 3.16373 7.24967 3.58103 8.25088C3.89407 9.00186 4.65342 9.89702 6.49347 9.89702H14.7513C15.0479 9.89702 15.2881 9.65663 15.2881 9.36019V6.52053C15.2882 6.38758 15.239 6.25935 15.1498 6.16074Z" fill="#FFC100"/>
+                      <path d="M13.0569 9.06766C12.991 8.96626 11.3994 6.56302 7.54523 4.81846C6.2185 4.21795 4.46697 3.75955 3.65634 4.98494C3.62487 5.03262 3.60116 5.08495 3.58615 5.14013C3.1583 6.71117 3.27238 7.9867 3.91579 8.82867C4.45734 9.53742 5.3256 9.89681 6.49647 9.89681H12.6066C12.8035 9.89681 12.9845 9.78917 13.0784 9.61618C13.1723 9.44326 13.1641 9.23282 13.0569 9.06766Z" fill="#FF5C57"/>
+                      <path d="M19.2488 5.453H14.7517C14.4551 5.453 14.2148 5.69339 14.2148 5.98983V9.36015C14.2148 9.65665 14.4551 9.89697 14.7517 9.89697H19.2488C19.5454 9.89697 19.7857 9.65658 19.7857 9.36015V5.98983C19.7857 5.69333 19.5454 5.453 19.2488 5.453Z" fill="#00B6C6"/>
+                      <path d="M33.4632 8.82434H0.536828C0.240258 8.82434 0 9.06473 0 9.36117L0 14.6586C0 14.9551 0.240258 15.1954 0.536828 15.1954H33.4632C33.7597 15.1954 34 14.955 34 14.6586V9.36117C34 9.06467 33.7597 8.82434 33.4632 8.82434Z" fill="#C251C0"/>
+                      <path d="M21.1262 8.82416H12.8789V15.1954H21.1262V8.82416Z" fill="#FFC100"/>
+                    </g> 
+                  </svg>
+                </span>
+              </div>
+              <div class="products-card__img">
+                <img class="lazy" data-lazy="./img/products/1.png" alt="">
+              </div>
+              <div class="products-card__title">
+                  Боди Zara Моя Горошинка серое в полоску
+              </div>
+              <div class="products-card__review">
+                <div class="star">
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span class="active"></span>
+                  <span></span>
+                </div>
+                <span class="quote">18</span>
+              </div>
+              <div class="products-card__bottom">
+                <div class="products-card__bottom__price">
+                  <span class="old">7 200 ₽</span>
+                  <span class="price">6 750 ₽</span>
+                </div>
+                <div class="products-card__bottom__buy">
+                  <span class="wishlist active"></span>
+                  <span class="cart"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="visited-products--item">
+            <a href="./products-page.html" class="products-card">
+              <div class="products-card__head">
+                <span class="bonus"></span>
+                <span class="installments"></span>
+              </div>
+              <div class="products-card__img">
+                <img class="lazy" data-lazy="./img/products/2.png" alt="">
+              </div>
+              <div class="products-card__title">
+                  Сумочка LOL антистресс
+              </div>
+              <div class="products-card__review">
+                <div class="star">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="quote">18</span>
+              </div>
+              <div class="products-card__bottom">
+                <div class="products-card__bottom__price">
+                  <span class="old">7 200 ₽</span>
+                  <span class="price">6 750 ₽</span>
+                </div>
+                <div class="products-card__bottom__buy">
+                  <span class="wishlist"></span>
+                  <span class="cart"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+  
+      </div>
+    </section>
+
+</main>
+
+<footer>
+  <div class="container">    
+    <div class="email-form">
+      <div class="email-form-block">
+        <div class="email-form-block__title">
+          <img src="./img/email-form/email.svg" alt=" Узнавайте о выгодных  предложениях первыми!">
+          <p>Узнавайте о выгодных предложениях первыми!</p>
+        </div>
+        <form class="email-form-block__form">
+          <input type="email" name="email" value="" placeholder="Ваш e-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>ВсёДляДеток.ру</b></p>
+          <ul>
+              <li><a href="">О компании</a></li>
+              <li><a href="">Пункты выдачи</a></li>
+              <li><a href="">Розничные магазины</a></li>
+              <li><a href="">Контакты</a></li>
+              <li><a href="">Отзывы</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Покупателям</b></p>
+          <ul>
+            <li><a href="">Проверка заказа</a></li>
+            <li><a href="">Гарантии и возврат</a></li>
+            <li><a href="">Доставка и оплата</a></li>
+            <li><a href="">Полезные материалы</a></li>
+            <li><a href="">Покупай со Сбербанком</a></li>
+            <li><a href="">Бонусная программа</a></li>
+            <li><a href="">Подарочные карты</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <p><b>Обратная связь</b></p>
+          <ul>
+            <li><a href="">Заказать звонок</a></li>
+            <li><a href="">Заявка на возврат</a></li>
+            <li><a href="">Заявка на обмен</a></li>
+            <li><a href="">Оставить отзыв</a></li>
+            <li><a href="">Благодарность</a></li>
+            <li><a href="">Пожаловаться</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-6 col-md-4 offset-md-4 col-lg-3 offset-lg-0">
+        <p><b>Сообщество </b></p>
+        <p>Мы в социальных сетях</p>
+        <div class="social">
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>© 2019-2020. ВсёДляДеток.ру</p>
+      <p class="policy">
+        <a href="">Пользовательское соглашение</a>
+        <a href="">Политика конфеденциальности</a>
+      </p>
+      <p class="created">
+        Разработка сайта: <a href="">Смарт Сателлит</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal">
+  <div class="container">
+    <!-- Modal Menu -->
+    <div class="modal-body menu" data-modal="menu">
+      <span class="close" data-close="close"></span>
+      <a href="" class="button login">
+        <img src="./img/nav/mobile/login.svg" alt="">
+        Вход</a>
+      <a href="/" class="button lk hidden">
+          <img src="./img/nav/mobile/lk.svg" alt="">
+          Гость</a>
+      <a href="" class="button city" data-mobile="yes" data-toggle="modal" data-target="city">
+        <img src="./img/nav/mobile/location.svg" alt="">
+        Санкт-Петербург</a>
+      <a href="tel:8-800-600-77-27" class="button phone">
+        <img src="./img/nav/mobile/phone.svg" alt="">
+        8-800-600-77-27</a>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>ВсёДляДеток</b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">О компании</a></li>
+          <li><a href="">Пункты выдачи</a></li>
+          <li><a href="">Розничные магазины</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Покупателям
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Проверка заказа</a></li>
+          <li><a href="">Доставка и оплата</a></li>
+          <li><a href="">Гарантии и возврат</a></li>
+          <li><a href="">Покупай со Сбербанком</a></li>
+          <li><a href="">Полезные материалы</a></li>
+          <li><a href="">Бонусная программа</a></li>
+          <li><a href="">Подарочные карты</a></li>
+        </ul>
+      </div>
+      <div class="menu-item">
+        <p class="hideElem">
+          <b>
+            Обратная связь
+          </b>
+        </p>
+        <ul class="showElem">
+          <li><a href="">Заказать звонок</a></li>
+          <li><a href="">Заявка на возврат</a></li>
+          <li><a href="">Заявка на обмен</a></li>
+          <li><a href="">Оставить отзыв</a></li>
+          <li><a href="">Благодарность</a></li>
+          <li><a href="">Пожаловаться</a></li>
+        </ul>
+      </div>
+      <div class="social">
+        <p>
+          <b>
+            Сообщество
+          </b>
+        </p>
+        <div class="social-link">
+          <a href=""><img src="./img/social/instagram.svg" alt=""></a>
+          <a href=""><img src="./img/social/vk.svg" alt=""></a>
+          <a href=""><img src="./img/social/youtube.svg" alt=""></a>
+          <a href=""><img src="./img/social/ok.svg" alt=""></a>
+        </div>
+      </div>
+      <div class="menu-email">
+        <p>
+          <b>
+            Подпишись на обновления
+          </b>
+        </p>
+        <form action="/" method="post">
+          <input type="email" name="email" value="" placeholder="E-mail" required>
+          <button class="btn btn-send">Подписаться</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal City -->
+    <div class="modal-body city" data-modal="city">
+      <span class="close" data-close="close"></span>
+      <div class="city-wrapper fade active">
+        <p class="modal-body__head">Ваш город:</p>
+        <p class="modal-body__city">Санкт-Петербург</p>
+        <p class="modal-body__desc">От города зависят условия доставки</p>
+        <div class="modal-body__button">
+          <button class="btn btn-accent" data-close="close">Да</button>
+          <button class="btn btn-outline-accent open-city-list">Нет, выбрать другой</button>
+        </div>
+      </div>
+      <form action="/" method="post" class="city-list">
+        <label for="city">Введите название</label>
+        <input id="city" type="text" name="city" class="city" placeholder="Ваш город">
+      </form>
+    </div>
+    <!-- Modal Login -->
+    <div class="modal-body login" data-modal="login">
+      <span class="close" data-close="close"></span>
+      <form action="/" method="post" class="login-form">
+        <p><b>Вход или регистрация</b></p>
+        <label for="phone">Введите номер телефона</label>
+        <input type="tel" id="phone" name="phone" class="phone-mask" required>
+        <button type="submit" class="btn btn-accent">Получить sms-код</button>
+      </form>
+      <form action="/" method="post" class="sms-form">
+        <p><b>Введите код из смс</b></p>
+        <div class="signin-sms__wrap">
+          <input class="sms-input" type="tel" name="sms1" maxlength="1" tabindex="1">
+          <input class="sms-input" type="tel" name="sms2" maxlength="1" tabindex="2">
+          <input class="sms-input" type="tel" name="sms3" maxlength="1" tabindex="3">
+          <input class="sms-input" type="tel" name="sms4" maxlength="1" tabindex="4">
+        </div>
+      </form>
+      <div class="complete"><p>Готово</p></div>
+    </div>
+  </div>
+</div>
+  
+  <script src="./js/scripts.min.js"></script>
+  <script defer src='./js/chunk-vendors.2f6d4ee4.js'></script>
+  <script defer src='./js/app.22dcbbb1.js'></script>
+  <link href='./css/app.78c9e97a.css' rel=stylesheet>
+  <link rel="stylesheet" href="./css/main.min.css">
+
+  <link rel="stylesheet" href="./js/slick/slick.css">
+  <script src="./js/slick/slick.min.js"></script>
+
+  <script>
+    $( document ).ready(function() {
+      $('.visited-products').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        draggable: false,
+        responsive: [
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+        ]
+      });
+    });
+  </script>
+</body>
+</html>
+
+
