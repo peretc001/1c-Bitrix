@@ -1,0 +1,220 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.2);
+    z-index: -1;
+
+    &-body {
+        width: 100%;
+        overflow-x: hidden;
+        max-width: 600px;
+        background: #F4F4F4;
+        box-shadow: 0px 8px 25px rgba(47, 47, 49, 0.03);
+        border-radius: 10px;
+        text-align: center;
+        padding: 60px 30px;
+        display: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &::-webkit-scrollbar-track {
+            display: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            display: none;
+        }
+
+        &.fade {
+            display: block;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity .3s ease, transform .3s cubic-bezier(.45,0,.45,1.5);
+        }
+
+        &.is-active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        h6 {
+            margin: 0;
+            font-size: 2.25em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        form {
+            padding: 60px 0 40px;
+
+            label {
+                display: block;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                position: relative;
+
+                input, textarea {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 15px 30px;
+                    font-size: 16px !important;
+                    line-height: 1;
+                    background: #ffffff;
+                    color: $text;
+                    border: none;
+                    border-radius: 5px;
+                    outline: none;
+                    box-shadow: none;
+
+                    &::-webkit-input-placeholder {
+                        color: #C2C2C2;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: #C2C2C2;
+                    }
+
+                    &::-ms-input-placeholder {
+                        color: #C2C2C2;
+                    }
+
+                    &::placeholder {
+                        color: #C2C2C2;
+                    }
+                }
+
+                textarea {
+                    font-family: $default-font;
+                    min-height: 125px;
+                    resize: vertical;
+                }
+            }
+
+            .js-placeholder {
+                text-align: left;
+                color: #C2C2C2;
+                position: absolute;
+                left: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                pointer-events: none;
+                font-size: 16px !important;
+                margin: 0;
+                line-height: 1;
+                z-index: 1;
+
+                span {
+                    color: #ffb3b3;
+                }
+            }
+
+            .btn {
+                margin-top: 10px;
+            }
+        }
+
+        small {
+            display: block;
+            max-width: 400px;
+            margin: 0 auto;
+            color: #C2C2C2;
+            font-size: 0.75em;
+        }
+    }
+
+    &.fade {
+        display: flex;
+        opacity: 0;
+        transition: opacity .3s ease;
+        z-index: 10;
+    }
+
+    &.is-active {
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 1349.98px) {
+        &-body {
+            font-size: 14px;
+            padding: 30px;
+
+            form {
+                padding: 30px 0;
+
+                label {
+                    textarea {
+                        min-height: 60px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 767.98px) {
+        padding: 10px 20px;
+        font-size: 12px;
+
+        &-body {
+            max-width: 100%;
+            padding: 30px 15px;
+
+            h6 {
+                font-size: 1.75em;
+                max-width: 220px;
+                margin: 0 auto;
+                margin-bottom: 20px;
+            }
+
+            form {
+                label {
+                    margin-bottom: 10px;
+                    textarea {
+                        min-height: 120px;
+                    }
+                }
+                .btn {
+                    margin-top: 5px;
+                }
+            }
+
+            small {
+                display: block;
+                max-width: 300px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 399.98px) {
+        &-body {
+            h6 {
+                font-size: 1.5em;
+                max-width: 220px;
+            }
+
+            form {
+                padding: 20px 10px;
+
+                label {
+                    textarea {
+                        min-height: 60px;
+                    }
+                }
+                .btn {
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "smatrt_satellite_theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "lost": "^8.3.1",
+    "node-sass": "^4.13.1"
+  },
+  "scripts": {
+    "test": "npm run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://paradox1030@bitbucket.org/paradox1030/smart-satellite.git"
+  },
+  "author": "https://github.com/Paradox1030",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/paradox1030/smart-satellite#readme"
+}

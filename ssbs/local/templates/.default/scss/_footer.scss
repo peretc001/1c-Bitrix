@@ -1,0 +1,111 @@
+footer {
+    padding: 100px 0;
+
+    .footer-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--item {
+            p, a {
+                display: block;
+                margin: 0;
+                font-weight: bold;
+                font-size: 1.25em;
+                margin-bottom: 6px;
+            }
+
+            span {
+                display: block;
+                font-size: 0.75em;
+            }
+
+            &.mobile {
+                display: none;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 60px 0 0;
+        font-size: 1em;
+    }
+
+    @media screen and (max-width: 991.98px) {
+        .footer-group {
+            flex-wrap: wrap;
+
+            &--item {
+                flex: 0 0 50%;
+
+                &:nth-child(3), &:nth-child(5) {
+                    text-align: right;
+                }
+                &:nth-child(4), &:nth-child(5) {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 576.98px) {
+        padding: 60px 0 30px 0;
+
+
+        .footer-group {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &--item {
+                flex: 0 0 100%;
+                text-align: center !important;
+                margin-bottom: 30px;
+
+                &:nth-child(4), &:nth-child(5) {
+                    margin-top: 0px;
+                }
+
+                &:nth-child(5) {
+                    margin-bottom: 0px;
+                }
+
+                &.mobile {
+                    display: block;
+                }
+                &.desctop {
+                    display: none;
+                }
+
+                p, a {
+                    font-size: 1.333em;
+                }
+
+                span {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .copyright {
+            padding: 30px 0 0;
+            font-size: .9em;
+        }
+    }
+
+    @media screen and (max-width: 425.98px) {
+        .footer-group {
+            &--item {
+                p, a {
+                    max-width: 250px;
+                    text-align: center;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+        .copyright {
+            font-size: .8em;
+        }
+    }
+}
