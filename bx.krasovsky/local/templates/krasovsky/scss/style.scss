@@ -1,0 +1,135 @@
+@import 'vars';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: $font;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.2;
+  overflow-x: hidden;
+  color: $black;
+  transition: opacity .5s ease;
+
+  &.no-scroll:not(.modal) {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a, a:hover {
+  color: $black;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2, h3 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include mobile-xl {
+    font-size: 24px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+
+.flex-container {
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  .col-left {
+    flex: 0 0 34%;
+
+    @include tablet {
+      flex: 0 0 100%;
+    }
+  }
+
+  .col-right {
+    flex: 1;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  color: $black;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  @include mobile {
+    font-size: 14px;
+  }
+
+  &.arrow {
+
+    &:after {
+      content: '';
+      display: block;
+      flex: none;
+      width: 18px;
+      height: 12px;
+      margin-left: 16px;
+      mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
+      -webkit-mask: url('../img/slider/left-arrow.svg') no-repeat 50% 50% / 100% 100%;
+      background: $black;
+      transition: transform .3s ease;
+    }
+
+    &:hover {
+      &:after {
+        transform: translateX(-10px);
+      }
+    }
+  }
+}
+
+.btn, .btn:focus, .btn:active {
+  user-select: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@import 'header';
+@import 'slider';
+@import 'about';
+@import 'news';
+@import 'form';
+@import 'footer';
+
+
+body {
+  opacity: 1;
+}

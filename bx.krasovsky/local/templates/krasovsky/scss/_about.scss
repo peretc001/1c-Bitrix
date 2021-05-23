@@ -1,0 +1,28 @@
+.about {
+  padding: 70px 0 80px;
+
+  h2 {
+    margin-bottom: 10px;
+
+    @include tablet {
+      text-align: center;
+    }
+  }
+
+  p {
+    line-height: 1.625;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 50px;
+
+    @include tablet {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

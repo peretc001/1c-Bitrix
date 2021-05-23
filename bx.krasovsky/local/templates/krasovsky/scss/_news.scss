@@ -1,0 +1,113 @@
+.news {
+  .news-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    counter-reset: myCounter;
+    margin: 0 -15px;
+
+    @include mobile {
+      flex-direction: column;
+      margin: 0 -10px;
+    }
+
+    .news-item {
+      height: 300px;
+      overflow: hidden;
+      position: relative;
+      padding: 15px;
+
+      @include mobile-xl {
+        height: 200px;
+        padding: 10px;
+      }
+
+      @include mobile {
+        padding: 10px;
+
+        &:nth-child(3n + 1) {
+          order: 2;
+        }
+        &:nth-child(3n + 2) {
+          order: 1;
+        }
+        &:nth-child(3n + 3) {
+          order: 3;
+        }
+      }
+
+      &:after {
+        counter-increment: myCounter;
+        content:counter(myCounter);
+        color: rgba($white, 0.5);
+        font-size: 160px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+
+        @include mobile-xl {
+          font-size: 95px;
+        }
+      }
+
+      .news-content {
+        position: relative;
+        display: block;
+        height: 100%;
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.56);
+          pointer-events: none;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &.col-1 {
+        flex: 0 0 50%;
+
+        @include mobile {
+          flex: 0 0 100%;
+        }
+      }
+
+      &.col-2 {
+        flex: 0 0 100%;
+      }
+    }
+
+  }
+
+  .button-wrapper {
+    margin-top: 50px;
+    text-align: center;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+$accent: #14A5DA;
+$white: #FFFFFF;
+$black: #000000;
+
+//Fonts
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
+  }
+}
+
+@include font-face(Montserrat, '../fonts/Montserrat/Montserrat-Regular')
+@include font-face(Montserrat, '../fonts/Montserrat/Montserrat-Bold', bold)
+
+
+$font: 'Montserrat', sans-serif;
+
+
+//Img
+$path: '/img/';
+
+@mixin icon($color, $img, $size, $position) {
+  background-color: $color;
+  background-image: url($path + $img);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+//Breakpoints
+@mixin mobile-s {
+  @media screen and (max-width: 374.98px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 576.98px) {
+    @content;
+  }
+}
+
+@mixin mobile-xl {
+  @media screen and (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 991.98px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin notebook {
+  @media screen and (max-width: 1299.98px) {
+    @content;
+  }
+}
+
+@mixin imac {
+  @media screen and (max-width: 1919.98px) {
+    @content;
+  }
+}
